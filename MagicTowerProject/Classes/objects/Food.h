@@ -15,18 +15,23 @@
 #include "Pickup.h"
 
 class Food : public Pickup {
-    
+#define IDLE_MOVEMENT_SPEED 6.0f
 public:
     static Food* create();
     bool init() override;
     
     void onPickUpObject() override;
     void destroySelf() override;
+    void update(float dt) override;
     Food(){};
     ~Food(){};
     
 private:
     cocos2d::Sprite* _sprite;
+    float _elapsedTime;
+    int _directionX = 1;
+    int _directionY = 1;
+    bool _canMove = true;
 
 };
 

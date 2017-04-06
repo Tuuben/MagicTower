@@ -19,6 +19,7 @@ public:
     static Pickup* create(cocos2d::Size physicsBodySize, int bitmask, int colidingBitmask);
     virtual bool init(cocos2d::Size physicsBodySize, int bitmask, int colidingBitmask);
     AnimationComponent* getAnimationComponent();
+    virtual void moveTowardPlayer(float speed, float distance, float dt);
     virtual void onPickUpObject();
     virtual void destroySelf();
     
@@ -31,6 +32,7 @@ private:
 private:
     AnimationComponent* _animComponent;
     int _colideBitmask = 0;
+    bool _foundPlayer = false;
 };
 
 #endif /* Pickup_hpp */

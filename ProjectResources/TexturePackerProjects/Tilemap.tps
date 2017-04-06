@@ -4,9 +4,9 @@
         <key>fileFormatVersion</key>
         <int>3</int>
         <key>texturePackerVersion</key>
-        <string>4.0.0</string>
+        <string>4.0.2</string>
         <key>fileName</key>
-        <string>/Users/Tobias/Desktop/C++/MagicTower/ProjectResources/TexturePackerProjects/Tilemap.tps</string>
+        <string>/Users/tobiashelsing/Desktop/Neonhook/Games/MagicTower/ProjectResources/TexturePackerProjects/Tilemap.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -84,7 +84,7 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
@@ -176,7 +176,7 @@
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
-            <uint>0</uint>
+            <uint>5</uint>
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMargin</key>

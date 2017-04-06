@@ -104,6 +104,15 @@ void GameScene::flashColor( Color3B color )
     flashLayer->flash(30, 0.14f);
 }
 
+Player* GameScene::getPlayer(){
+    
+    if(!playerObj){
+        CCLOGERROR("Player object null");
+    }
+        
+    return playerObj;
+}
+
 void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
 {
     if( keyCode == EventKeyboard::KeyCode::KEY_R)

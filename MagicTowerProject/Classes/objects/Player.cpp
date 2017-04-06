@@ -9,7 +9,7 @@
 #include "Player.h"
 #include "../scenes/GameScene.h"
 #include "../handlers/AudioManager.h"
-
+#include "../candypunk/utility/Utils.h"
 
 Player* Player::create( cocos2d::Layer* onLayer )
 {
@@ -46,11 +46,13 @@ bool Player::init( cocos2d::Layer* onLayer )
     
     //create physics body
     auto pBody = PhysicsBody::createCircle( 4 , PhysicsMaterial(1.0f, 0.0f, 1.0f) );
+    pBody->setPositionOffset(Vec2(1, 0));
     pBody->setRotationEnable(false);
     pBody->setCollisionBitmask(PLAYER_BITMASK);
     pBody->setContactTestBitmask(true);
     pBody->setEnabled(true);
     this->setPhysicsBody(pBody);
+
     
     setupEvents();
     
@@ -85,6 +87,8 @@ void Player::update(float dt)
     }
     
     checkSideCollisions();
+
+    
 }
 
 void Player::jump()
@@ -105,6 +109,21 @@ void Player::jump()
     _touchingRight = false;
     _touchBottom = false;
     _touchTop = false;
+    
+    // Particles
+    for(int i = 0; i < 3; i++){
+        
+        float vx = 60 * CCRANDOM_0_1() - 30.0f;
+        float vy = 50 * CCRANDOM_0_1();
+        float startScale = 0.6f * CCRANDOM_0_1() + 0.6f;
+        float endScale = 0;
+        float lifeTime = 0.4f * CCRANDOM_0_1() + 0.2f;
+        SimpleParticle* particle = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifeTime, startScale, endScale);
+        particle->setPosition(getPosition());
+        _onLayer->addChild(particle, -50);
+        
+    }
+    
 }
 
 void Player::checkSideCollisions()
@@ -117,7 +136,7 @@ void Player::checkSideCollisions()
             if ( !_touchingLeft )
             {
                 auto colNode = shape.getBody()->getNode();
-                Vec2 worldPos = colNode->getPosition() + colNode->getParent()->getPosition();//convertToWorldSpace( colNode->getPosition() );
+                Vec2 worldPos = colNode->getPosition() + colNode->getParent()->getPosition();
                 worldPos.x += 8 * CCRANDOM_0_1() + 4;
                 worldPos.y -= 8 * CCRANDOM_0_1();
                 this->collisionEmit(worldPos, 1, -1);
@@ -208,8 +227,14 @@ void Player::checkSideCollisions()
             }
         }
         
+        
+        
         return true;
     };
+    
+   // bool bottom = Utils::rayCastDirection(getParent()->convertToWorldSpace(getPosition()), Vec2(-30, 0), SOLID_BITMASK, true);
+    //CCLOG("left %d", bottom);
+    
     Vec2 playerWorldPos = this->getParent()->convertToWorldSpace(this->getPosition());
     Director::getInstance()->getRunningScene()->getPhysicsWorld()->queryRect(collideLeft, Rect( playerWorldPos.x - (PLAYER_CONTENT_SIZE.width / 2), playerWorldPos.y ,5, 2), nullptr);
     Director::getInstance()->getRunningScene()->getPhysicsWorld()->queryRect(collideRight, Rect( playerWorldPos.x + (PLAYER_CONTENT_SIZE.width / 2), playerWorldPos.y ,5, 2), nullptr);

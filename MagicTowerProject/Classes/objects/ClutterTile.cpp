@@ -38,13 +38,13 @@ bool ClutterTile::init(ClutterType clutterType)
         initWithSpriteFrameName(clutterSpritePath);
         
         _animComp->addAnimation( "idle", { "grass_clutter_01.png", "grass_clutter_02.png", "grass_clutter_03.png", "grass_clutter_04.png" } );
-        _animComp->playAnimation("idle", 8);
+        _animComp->playAnimation( "idle", 8, true, true );
         
         this->setGlobalZOrder(-50);
         
         Color3B primaryColor(0, 255, 0);
-        Color3B secondaryColor(228, 92, 16);
-        this->setColor( ( (100 * CCRANDOM_0_1()) < 50 ) ? primaryColor : secondaryColor );
+        Color3B secondaryColor(216, 248, 120);
+        this->setColor( secondaryColor );//( (100 * CCRANDOM_0_1()) < 50 ) ? primaryColor : secondaryColor );
         
     }
     else if(clutterType == ClutterType::BACKGROUND){
@@ -55,16 +55,9 @@ bool ClutterTile::init(ClutterType clutterType)
         initWithSpriteFrameName(clutterSpritePath.str());
         this->setColor( Color3B(77, 77, 77));
         this->setGlobalZOrder(-100);
-        this->setPositionZ(-40);
+        this->setPositionZ(-10);
     }
     
-    this->scheduleUpdate();
     
     return true;
-}
-
-void ClutterTile::update(float dt)
-{
-    Node::update(dt);
-    
 }

@@ -18,6 +18,7 @@
 #define FOOD_BITMASK 0x000003
 #define COIN_BITMASK 0x000004
 #define OBSTACLE_BITMASK 0x000005
+#define SOILD_IGNORE_BITMASK_CATEGORY -50
 
 /*==== < PLIST'S > ====*/
 #define TILEMAP_PLIST_PATH "textures/tilemap.plist"
@@ -88,7 +89,7 @@
 /*==== < COLORS > ====*/
 #define FOOD_COLOR cocos2d::Color3B( 60, 188, 252 )
 #define COIN_COLOR cocos2d::Color3B( 0, 0, 0 )
-#define OBSTACLE_COLOR cocos2d::Color3B(255, 0, 0)
+#define OBSTACLE_COLOR cocos2d::Color3B(228, 0, 88)
 
 /*==== < AUDIO > ====*/
 #define SFX_HIT_01 "audio/hit_01.wav"

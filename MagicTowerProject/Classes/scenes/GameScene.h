@@ -24,12 +24,14 @@ public:
     
     void flashColor( cocos2d::Color3B color );
     
+    Player* getPlayer();
+    
 private:
     void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
     
 public:
     MapHandler* mapH;
-    Player* playerObj;
+    Player* playerObj = nullptr;
     FlashLayer* flashLayer;
     cocos2d::Vec2 lastPlayerPos;
     cocos2d::Size visibleSize;

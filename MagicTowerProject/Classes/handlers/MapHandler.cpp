@@ -111,6 +111,7 @@ void MapHandler::createLevelContentData(int cleanIterations )
     //data iteration
     int gap01 = (LEVEL_BLOCK_WIDTH - 2) * CCRANDOM_0_1() + 2;
     int gap02 = gap01 + 1;
+    int numObjectsSpawned = 0;
     for(int y = 2; y < LEVEL_BLOCK_HEIGHT; y++)
     {
         //chance to change the gap
@@ -128,25 +129,26 @@ void MapHandler::createLevelContentData(int cleanIterations )
        // {
             int sourceX = (int)(CCRANDOM_0_1() * LEVEL_BLOCK_WIDTH - 2) + 2;
             float rand = 100 * CCRANDOM_0_1();
-            float chance = ( sourceX == gap01 || sourceX == gap02 ) ? -99 : SOLID_SPAWN_CHANCE;
             
-           // if(rand < chance)
-            //{
+            if(rand < SOLID_SPAWN_CHANCE && numObjectsSpawned < MAX_TILE_SPAWNS)
+            {
                 mapData[sourceX][y] = SOLID_TILE_ID;
+                numObjectsSpawned++;
             
-                int clusterWidth = (6 * CCRANDOM_0_1() + 2);
-                int clusterHeight = 2 * CCRANDOM_0_1() + 2;
+                int clusterWidth = (5 * CCRANDOM_0_1() + 2);
+                int clusterHeight = 4 * CCRANDOM_0_1() + 1;
                 
                 for(int cX = sourceX - (clusterWidth / 2); cX < sourceX + (clusterWidth / 2); cX++)
                 {
                     
                     for( int cY = y; cY < y + clusterHeight; cY++ ){
                         
-                        int spawnX = clampf(cX, 0, LEVEL_BLOCK_WIDTH - 1);
+                        int spawnX = clampf(cX, 0, LEVEL_BLOCK_WIDTH - 2);
                         int spawnY = clampf(cY, 0, LEVEL_BLOCK_HEIGHT - 1);//clampf(y + cY, 0, LEVEL_BLOCK_HEIGHT - 1);
                     
                         if(cX != gap01 || cX != gap02){
                             mapData[spawnX][spawnY] = 1;
+                            numObjectsSpawned++;
                         }
                         else{
                             mapData[spawnX][spawnY] = 0;
@@ -155,7 +157,7 @@ void MapHandler::createLevelContentData(int cleanIterations )
                     }
                     
                 }
-        //}
+            }
         
     }
     
@@ -277,8 +279,7 @@ void MapHandler::createLevelContentObjects()
                 if(tileIndex <= 15 && spotFilled < 1)
                 {
                     float chance = 100 * CCRANDOM_0_1();
-                    float spawnChance = 30;
-                    if(chance < spawnChance)
+                    if(chance < CLUTTER_TILE_SPAWN_CHANCE)
                     {
                         createClutterTile(x, y + _baseYIndex, ClutterType::BACKGROUND );
                     }
@@ -418,7 +419,7 @@ void MapHandler::createOuterTile(int xIndex, int yIndex, int dir)
     auto tile = Sprite::createWithSpriteFrameName(OUTER_TILE_SPRITE_01);
     tile->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
     tile->setScaleX(tile->getScaleX() * dir);
-    tile->cocos2d::Node::setPositionZ(20);
+//    tile->cocos2d::Node::setPositionZ(30);
     this->addChild(tile, 10);
     
     _mapNodes.push_back(tile);

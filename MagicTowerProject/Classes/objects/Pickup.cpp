@@ -7,6 +7,8 @@
 //
 
 #include "Pickup.h"
+#include "../scenes/GameScene.h"
+#include "../candypunk/utility/Utils.h"
 
 using namespace cocos2d;
 
@@ -26,7 +28,7 @@ Pickup* Pickup::create(cocos2d::Size physicsBodySize, int bitmask, int colidingB
 
 bool Pickup::init(cocos2d::Size physicsBodySize, int bitmask, int colidingBitmask)
 {
-    CCLOG("pickup inited");
+    
     _colideBitmask = colidingBitmask;
     
     _animComponent = AnimationComponent::createComponent(this);
@@ -37,7 +39,9 @@ bool Pickup::init(cocos2d::Size physicsBodySize, int bitmask, int colidingBitmas
     pBody->setContactTestBitmask(true);
     pBody->setDynamic(false);
     pBody->getShape(0)->setSensor(true);
+    pBody->setPositionOffset(Vec2( physicsBodySize.width / 2, physicsBodySize.height /2 ));
     this->setPhysicsBody(pBody);
+    
     
     auto onContactEventListener = EventListenerPhysicsContact::create();
     onContactEventListener->onContactBegin = CC_CALLBACK_1( Pickup::onContactBegin, this );
@@ -63,6 +67,32 @@ bool Pickup::onContactBegin(cocos2d::PhysicsContact &contact)
     }
     
     return true;
+}
+
+void Pickup::moveTowardPlayer(float speed, float minDistance, float dt){
+
+    if(GameScene::getInstance() != nullptr){
+        
+        auto playerObj = GameScene::getInstance()->getPlayer();
+        Vec2 playerPos = playerObj->getParent()->convertToWorldSpace( playerObj->getPosition() );
+        Vec2 curPos = getParent()->convertToWorldSpace(getPosition());
+        
+        Vec2 diff = Vec2( (curPos.x - playerPos.x) * (curPos.x - playerPos.x), ( curPos.y - playerPos.y) * (curPos.y - playerPos.y) );
+        float distance = sqrtf(diff.x - diff.y);
+        float angle = atan2( playerPos.y - curPos.y, playerPos.x - curPos.x);
+        
+        
+        
+        if( (distance < minDistance) || _foundPlayer){
+            Vec2 newPos = Utils::lerp(curPos, playerPos, dt * speed );
+            
+            Vec2 v = Vec2( cos(angle) * speed * dt, sin(-angle) * speed * dt );
+            setPosition( getPosition() + v );
+            _foundPlayer = true;
+        }
+        
+    }
+  
 }
 
 void Pickup::onPickUpObject()

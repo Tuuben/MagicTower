@@ -74,7 +74,7 @@ void AnimationComponent::addAnimation( std::string animationName, std::vector<st
     _animationsData.insert( std::pair< std::string, std::vector<std::string> >( animationName, frames ) );
 }
 
-void AnimationComponent::playAnimation(std::string animationName, int frameRate, bool loop)
+void AnimationComponent::playAnimation(std::string animationName, int frameRate, bool loop, bool randStart)
 {
     for(auto itr = _animationsData.begin(); itr != _animationsData.end(); itr++)
     {
@@ -87,7 +87,7 @@ void AnimationComponent::playAnimation(std::string animationName, int frameRate,
     _curAnimationName = animationName;
     _loop = loop;
     _frameRate = frameRate;
-    _frameIndex = 0;
+    _frameIndex = (!randStart) ? 0 : _currentAnimation.size() * CCRANDOM_0_1();
 }
 
 void AnimationComponent::stopAnimation()
@@ -109,3 +109,5 @@ std::string AnimationComponent::getCurrentAnimationName()
 {
     return _curAnimationName;
 }
+
+

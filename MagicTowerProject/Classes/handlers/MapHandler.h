@@ -25,9 +25,11 @@ class MapHandler : public cocos2d::Node
 #define LEVEL_BLOCK_WIDTH 16
 #define BASE_FLOOR_HEIGHT 1
 #define SOLID_TILE_COLOR cocos2d::Color3B(255, 255, 255)
-#define SOLID_SPAWN_CHANCE 35 //50
+#define SOLID_SPAWN_CHANCE 80 //50
 #define COIN_SPAWN_CHANCE 10
-#define FOOD_SPAWN_CHANCE 15
+#define FOOD_SPAWN_CHANCE 3
+#define CLUTTER_TILE_SPAWN_CHANCE 0
+#define MAX_TILE_SPAWNS 42
     
 #define EMPTY_TILE_ID 0
 #define SOLID_TILE_ID 1

@@ -70,6 +70,10 @@
 		9825D8881C80889100FD4133 /* Coin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D8851C80889100FD4133 /* Coin.cpp */; };
 		987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
+		98840D811E96DB9A005E1132 /* test.vert in Resources */ = {isa = PBXBuildFile; fileRef = 98840D801E96DB9A005E1132 /* test.vert */; };
+		98840D821E96DB9A005E1132 /* test.vert in Resources */ = {isa = PBXBuildFile; fileRef = 98840D801E96DB9A005E1132 /* test.vert */; };
+		98840D841E96DBAB005E1132 /* test.frag in Resources */ = {isa = PBXBuildFile; fileRef = 98840D831E96DBAB005E1132 /* test.frag */; };
+		98840D851E96DBAB005E1132 /* test.frag in Resources */ = {isa = PBXBuildFile; fileRef = 98840D831E96DBAB005E1132 /* test.frag */; };
 		98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
 		98916F911C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
 		98DA83101C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
@@ -193,6 +197,9 @@
 		9825D8861C80889100FD4133 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterTile.cpp; sourceTree = "<group>"; };
 		987114801C748DAE0062FCA9 /* ClutterTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterTile.h; sourceTree = "<group>"; };
+		98840D7E1E96BC1A005E1132 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		98840D801E96DB9A005E1132 /* test.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test.vert; sourceTree = "<group>"; };
+		98840D831E96DBAB005E1132 /* test.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = test.frag; sourceTree = "<group>"; };
 		98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashLayer.cpp; sourceTree = "<group>"; };
 		98916F8F1C7E0A2500D3D0EB /* FlashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashLayer.h; sourceTree = "<group>"; };
 		98DA830E1C7C8458006700AD /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
@@ -358,6 +365,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				98840D7F1E96DB72005E1132 /* shaders */,
 				9815C9461C7B0B490018656C /* candypunk */,
 				F6200EA91C6F1F1000102152 /* handlers */,
 				F6200EA81C6F1EFD00102152 /* objects */,
@@ -420,6 +428,7 @@
 		9815C9461C7B0B490018656C /* candypunk */ = {
 			isa = PBXGroup;
 			children = (
+				98840D7D1E96BC1A005E1132 /* utility */,
 				9815C9471C7B0B490018656C /* components */,
 				9815C9501C7B0B600018656C /* World.cpp */,
 				9815C9511C7B0B600018656C /* World.h */,
@@ -434,6 +443,23 @@
 				9815C9491C7B0B490018656C /* AnimationComponent.h */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		98840D7D1E96BC1A005E1132 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				98840D7E1E96BC1A005E1132 /* Utils.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		98840D7F1E96DB72005E1132 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				98840D801E96DB9A005E1132 /* test.vert */,
+				98840D831E96DBAB005E1132 /* test.frag */,
+			);
+			path = shaders;
 			sourceTree = "<group>";
 		};
 		F6200E8E1C6F19A700102152 /* scenes */ = {
@@ -535,7 +561,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = QXEBJ25CS4;
+						DevelopmentTeam = 4SBLL78RX9;
 					};
 				};
 			};
@@ -605,9 +631,11 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				98840D811E96DB9A005E1132 /* test.vert in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				F6235F2F1C6F30AF00D9DDC6 /* level01.txt in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
+				98840D841E96DBAB005E1132 /* test.frag in Resources */,
 				F6200EA11C6F1C6F00102152 /* textures in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
@@ -626,9 +654,11 @@
 				9825D8841C804B6400FD4133 /* audio in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
+				98840D821E96DB9A005E1132 /* test.vert in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				98840D851E96DBAB005E1132 /* test.frag in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +734,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 4SBLL78RX9;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -728,6 +759,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcandy.test123;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -743,6 +775,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				DEVELOPMENT_TEAM = 4SBLL78RX9;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -765,6 +798,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcandy.test123;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

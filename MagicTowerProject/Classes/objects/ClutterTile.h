@@ -27,7 +27,7 @@ public:
     bool init( ClutterType clutterType );
     
 private:
-    void update(float dt);
+    
     ClutterTile(){}
     ~ClutterTile(){}
 

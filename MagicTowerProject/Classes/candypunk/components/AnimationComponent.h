@@ -20,7 +20,7 @@ public:
     bool init(cocos2d::Sprite* animateSprite);
     void update(float dt) override;
     void addAnimation( std::string animationName, std::vector<std::string> frames );
-    void playAnimation( std::string animationName, int frameRate, bool loop = true );
+    void playAnimation( std::string animationName, int frameRate, bool loop = true, bool randStart = false );
     void stopAnimation();
     void onAnimationFinished( std::function<void()> onFinnished );
     std::string getCurrentAnimationName();
