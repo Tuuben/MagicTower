@@ -254,7 +254,7 @@
             <key>size</key>
             <string>{128,128}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:a804606e1059249dcbb58df577d5b18f:b5e07f2261a88cf1d2c5afcbe554276b:63a6360c4370b8e08215c25110aa6762$</string>
+            <string>$TexturePacker:SmartUpdate:7cf015849631fce64abc1158e82cebe2:a684efb80bc8062f818c9dcd15c0d99d:63a6360c4370b8e08215c25110aa6762$</string>
             <key>textureFileName</key>
             <string>tilemap.png</string>
         </dict>

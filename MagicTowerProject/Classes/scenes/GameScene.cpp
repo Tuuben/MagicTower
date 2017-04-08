@@ -1,5 +1,4 @@
 #include "GameScene.h"
-
 USING_NS_CC;
 
 GameScene* GameScene::_instance = nullptr;
@@ -85,7 +84,7 @@ void GameScene::update(float dt)
     World::update(dt);
     
     setCameraPositionX( MathUtil::lerp(getCameraPositionX(), 0, dt * 5) );
-    setCameraPositionY( getCameraPositionY() + (60 * dt) );
+    setCameraPositionY( getCameraPositionY() + (CAMERA_SPEED * dt) );
     
 //    setCameraPositionY( playerObj->getPositionY() -  (visibleSize.height / 2) );
     

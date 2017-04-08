@@ -11,6 +11,7 @@
 class GameScene : public World
 {
 #define MIN_CAMERA_POS 10
+#define CAMERA_SPEED 60
 public:
     static GameScene* getInstance();
     

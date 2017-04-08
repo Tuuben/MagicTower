@@ -38,6 +38,7 @@ bool Pickup::init(cocos2d::Size physicsBodySize, int bitmask, int colidingBitmas
     pBody->setCollisionBitmask(bitmask);
     pBody->setContactTestBitmask(true);
     pBody->setDynamic(false);
+    pBody->setGravityEnable(false);
     pBody->getShape(0)->setSensor(true);
     pBody->setPositionOffset(Vec2( physicsBodySize.width / 2, physicsBodySize.height /2 ));
     this->setPhysicsBody(pBody);

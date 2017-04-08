@@ -4,9 +4,9 @@
         <key>fileFormatVersion</key>
         <int>3</int>
         <key>texturePackerVersion</key>
-        <string>4.0.0</string>
+        <string>4.0.2</string>
         <key>fileName</key>
-        <string>/Users/Tobias/Desktop/C++/MagicTower/ProjectResources/TexturePackerProjects/spritemap.tps</string>
+        <string>/Users/tobiashelsing/Desktop/Neonhook/Games/MagicTower/ProjectResources/TexturePackerProjects/spritemap.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -201,17 +201,11 @@
             <filename>../Clutter/wall_clutter_2.png</filename>
             <filename>../Clutter/wall_clutter_3.png</filename>
             <filename>../Clutter/wall_clutter_4.png</filename>
-            <filename>../Clutter/wall_clutter_5.png</filename>
-            <filename>../Clutter/wall_clutter_6.png</filename>
-            <filename>../Clutter/wall_clutter_7.png</filename>
             <filename>../Clutter/grass_clutter_04.png</filename>
             <filename>../MapObjects/food_01.png</filename>
             <filename>../MapObjects/food_02.png</filename>
             <filename>../MapObjects/food_03.png</filename>
             <filename>../MapObjects/food_04.png</filename>
-            <filename>../Clutter/wall_clutter_8.png</filename>
-            <filename>../Clutter/wall_clutter_9.png</filename>
-            <filename>../Clutter/wall_clutter_10.png</filename>
             <filename>../MapObjects/food_pick_01.png</filename>
             <filename>../MapObjects/food_pick_02.png</filename>
             <filename>../MapObjects/food_pick_03.png</filename>
@@ -219,7 +213,6 @@
             <filename>../MapObjects/food_pick_05.png</filename>
             <filename>../MapObjects/food_pick_06.png</filename>
             <filename>../MapObjects/food_pick_07.png</filename>
-            <filename>../Clutter/wall_clutter_11.png</filename>
             <filename>../Clutter/particle_dust_01.png</filename>
             <filename>../Clutter/particle_dust_02.png</filename>
             <filename>../Clutter/particle_dust_03.png</filename>
@@ -239,6 +232,9 @@
             <filename>../MapObjects/coin_pickup_06.png</filename>
             <filename>../MapObjects/coin_pickup_07.png</filename>
             <filename>../MapObjects/spike.png</filename>
+            <filename>../MapObjects/chain_base.png</filename>
+            <filename>../MapObjects/chain_link.png</filename>
+            <filename>../MapObjects/chain_mace.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

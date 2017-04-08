@@ -27,9 +27,10 @@ class MapHandler : public cocos2d::Node
 #define SOLID_TILE_COLOR cocos2d::Color3B(255, 255, 255)
 #define SOLID_SPAWN_CHANCE 80 //50
 #define COIN_SPAWN_CHANCE 10
-#define FOOD_SPAWN_CHANCE 3
+#define FOOD_SPAWN_CHANCE 2
 #define CLUTTER_TILE_SPAWN_CHANCE 0
-#define MAX_TILE_SPAWNS 42
+#define SWING_TRAP_SPAWN_CHANCE 30
+#define MAX_TILE_SPAWNS 38
     
 #define EMPTY_TILE_ID 0
 #define SOLID_TILE_ID 1
@@ -92,6 +93,11 @@ private:
     void createLevelContentObjects();
     
     /**
+     * @brief Takes the map data and looks for large gaps to create larger objects
+     */
+    void createLargeLevelContentObjects();
+    
+    /**
      * @brief Returns a value depending on how many neighbours the tile has
      * @return Returns Tile value between 0-15 depending on neighbours
      */
@@ -107,6 +113,7 @@ private:
     void createOuterTile(int xIndex, int yIndex, int dir);
     void createClutterTile(int xIndex, int yIndex, ClutterType clutterType);
     void createSpike(int xIndex, int yIndex, Spike::DIRECTION dir);
+    void createSwing(int xIndex, int yIndex);
     void createFood(int xIndex, int yIndex);
     void createCoin(int xIndex, int yIndex);
     

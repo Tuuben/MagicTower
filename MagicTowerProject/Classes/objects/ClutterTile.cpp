@@ -50,12 +50,15 @@ bool ClutterTile::init(ClutterType clutterType)
     else if(clutterType == ClutterType::BACKGROUND){
         
         std::stringstream clutterSpritePath;
-        clutterSpritePath << "wall_clutter_" << (int)( 11 * CCRANDOM_0_1() + 1 ) << ".png";
+        int index = (int)( 4 * CCRANDOM_0_1() + 1 );
+        index = (int)clampf(index, 0, 4);
+        clutterSpritePath << "wall_clutter_" << index << ".png";
+        CCLOG("%s", clutterSpritePath.str().c_str());
         
         initWithSpriteFrameName(clutterSpritePath.str());
-        this->setColor( Color3B(77, 77, 77));
-        this->setGlobalZOrder(-100);
-        this->setPositionZ(-10);
+//        this->setColor( Color3B(77, 77, 77));
+        this->setGlobalZOrder(-50);
+//        this->setPositionZ(-10);
     }
     
     

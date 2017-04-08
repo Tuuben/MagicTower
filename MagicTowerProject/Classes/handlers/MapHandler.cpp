@@ -7,6 +7,7 @@
 //
 
 #include "MapHandler.h"
+#include "../objects/traps/Swing.h"
 
 using namespace cocos2d;
 
@@ -63,6 +64,11 @@ void MapHandler::updateMap( float clearPositionY )
      2. creates other game objects
      */
     createLevelContentObjects();
+    
+    /* === < LARGE LEVEL OBJECTS > ===
+     1. uses map data and creates large objects
+     */
+    createLargeLevelContentObjects();
 }
 
 float MapHandler::getMapWidth()
@@ -281,6 +287,7 @@ void MapHandler::createLevelContentObjects()
                     float chance = 100 * CCRANDOM_0_1();
                     if(chance < CLUTTER_TILE_SPAWN_CHANCE)
                     {
+                        CCLOG("CREATE");
                         createClutterTile(x, y + _baseYIndex, ClutterType::BACKGROUND );
                     }
                 }
@@ -303,6 +310,45 @@ void MapHandler::createLevelContentObjects()
             }
             
         }
+    }
+    
+}
+
+void MapHandler::createLargeLevelContentObjects(){
+    
+    for(int y = 0; y < LEVEL_BLOCK_HEIGHT - 10; y++)
+    {
+        for(int x = 0; x < LEVEL_BLOCK_WIDTH - 14; x++)
+        {
+    
+            //Check grid
+            int bX = x;
+            int bY = y;
+            bool foundSolidInGrid = false;
+            for(int checkY = bY; checkY < bY + 10; checkY++){
+                for(int checkX = bX; checkX < bX + 14; checkX++){
+                    
+                    if( mapData[checkX][checkY] == SOLID_TILE_ID )
+                        foundSolidInGrid = true;
+                    
+                }
+            }
+            
+            if(!foundSolidInGrid){
+                int halfGridHeight = 6;
+                if( 100 * CCRANDOM_0_1() < SWING_TRAP_SPAWN_CHANCE){
+                    int xIndex = bX + (4 * CCRANDOM_0_1()) + 6;
+                    int yIndex = bY + halfGridHeight;
+                    createSwing( xIndex, yIndex + _baseYIndex );
+                    mapData[xIndex][yIndex] = 1;
+                }
+            }
+            else{
+                CCLOG("NO OPENINGS");
+            }
+            
+        }
+    
     }
     
 }
@@ -418,7 +464,7 @@ void MapHandler::createOuterTile(int xIndex, int yIndex, int dir)
     //create tile
     auto tile = Sprite::createWithSpriteFrameName(OUTER_TILE_SPRITE_01);
     tile->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
-    tile->setScaleX(tile->getScaleX() * dir);
+    tile->setScaleX(tile->getScaleX() * dir );
 //    tile->cocos2d::Node::setPositionZ(30);
     this->addChild(tile, 10);
     
@@ -449,10 +495,20 @@ void MapHandler::createSpike(int xIndex, int yIndex, Spike::DIRECTION dir)
     _mapNodes.push_back(spikeNode);
 }
 
+void MapHandler::createSwing(int xIndex, int yIndex){
+
+    Swing* swing = Swing::create();
+    swing->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
+    this->addChild(swing);
+    _mapNodes.push_back(swing);
+    
+}
+
 void MapHandler::createFood(int xIndex, int yIndex)
 {
     Food* foodNode = Food::create();
     foodNode->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
+    foodNode->setGlobalZOrder(-50);
     this->addChild(foodNode);
     _mapNodes.push_back(foodNode);
 }

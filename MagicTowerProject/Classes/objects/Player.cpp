@@ -52,7 +52,6 @@ bool Player::init( cocos2d::Layer* onLayer )
     pBody->setContactTestBitmask(true);
     pBody->setEnabled(true);
     this->setPhysicsBody(pBody);
-
     
     setupEvents();
     
@@ -111,18 +110,18 @@ void Player::jump()
     _touchTop = false;
     
     // Particles
-    for(int i = 0; i < 3; i++){
-        
-        float vx = 60 * CCRANDOM_0_1() - 30.0f;
-        float vy = 50 * CCRANDOM_0_1();
-        float startScale = 0.6f * CCRANDOM_0_1() + 0.6f;
-        float endScale = 0;
-        float lifeTime = 0.4f * CCRANDOM_0_1() + 0.2f;
-        SimpleParticle* particle = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifeTime, startScale, endScale);
-        particle->setPosition(getPosition());
-        _onLayer->addChild(particle, -50);
-        
-    }
+//    for(int i = 0; i < 2; i++){
+//        
+//        float vx = 60 * CCRANDOM_0_1() - 30.0f;
+//        float vy = 50 * CCRANDOM_0_1();
+//        float startScale = 0.6f * CCRANDOM_0_1() + 0.6f;
+//        float endScale = 0;
+//        float lifeTime = 0.2f * CCRANDOM_0_1() + 0.1f;
+//        SimpleParticle* particle = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifeTime, startScale, endScale);
+//        particle->setPosition(getPosition());
+//        _onLayer->addChild(particle, -50);
+//        
+//    }
     
 }
 

@@ -62,6 +62,9 @@
 #define COIN_PICK_UP_06 "coin_pickup_06.png"
 #define COIN_PICK_UP_07 "coin_pickup_07.png"
 #define SPIKE_SPRITE_01 "spike.png"
+#define SWING_BASE_01 "chain_base.png"
+#define SWING_CHAIN_01 "chain_link.png"
+#define SWING_MACE_01 "chain_mace.png"
 
 /*==== < MISC SPRITES > ====*/
 #define GRASS_SPRITE_01 "grass_clutter_01.png"

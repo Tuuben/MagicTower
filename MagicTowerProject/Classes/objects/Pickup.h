@@ -22,6 +22,7 @@ public:
     virtual void moveTowardPlayer(float speed, float distance, float dt);
     virtual void onPickUpObject();
     virtual void destroySelf();
+    bool hasFoundPlayer(){return _foundPlayer;};
     
     Pickup(){}
     ~Pickup(){}

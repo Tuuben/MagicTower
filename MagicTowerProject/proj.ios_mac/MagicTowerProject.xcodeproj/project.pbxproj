@@ -56,6 +56,8 @@
 		9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9481C7B0B490018656C /* AnimationComponent.cpp */; };
 		9815C9521C7B0B600018656C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9501C7B0B600018656C /* World.cpp */; };
 		9815C9531C7B0B600018656C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9501C7B0B600018656C /* World.cpp */; };
+		9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9823DE191E98CDA9003ACFE4 /* Swing.cpp */; };
+		9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9823DE191E98CDA9003ACFE4 /* Swing.cpp */; };
 		9825D8801C80495700FD4133 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D87E1C80495700FD4133 /* AudioManager.cpp */; };
 		9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D87E1C80495700FD4133 /* AudioManager.cpp */; };
 		9825D8831C804B6400FD4133 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 9825D8821C804B6400FD4133 /* audio */; };
@@ -179,6 +181,8 @@
 		9815C9491C7B0B490018656C /* AnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationComponent.h; sourceTree = "<group>"; };
 		9815C9501C7B0B600018656C /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		9815C9511C7B0B600018656C /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		9823DE191E98CDA9003ACFE4 /* Swing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Swing.cpp; sourceTree = "<group>"; };
+		9823DE1A1E98CDA9003ACFE4 /* Swing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swing.h; sourceTree = "<group>"; };
 		9825D87E1C80495700FD4133 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		9825D87F1C80495700FD4133 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		9825D8821C804B6400FD4133 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 			children = (
 				F6502F621C81E28100920211 /* Spike.cpp */,
 				F6502F631C81E28100920211 /* Spike.h */,
+				9823DE191E98CDA9003ACFE4 /* Swing.cpp */,
+				9823DE1A1E98CDA9003ACFE4 /* Swing.h */,
 			);
 			path = traps;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				F6502F5E1C81CE3300920211 /* Pickup.cpp in Sources */,
+				9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				9815C94C1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				9825D8871C80889100FD4133 /* Coin.cpp in Sources */,
@@ -663,6 +670,7 @@
 			files = (
 				987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				F6502F651C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
 				F6200E921C6F19A700102152 /* GameScene.cpp in Sources */,

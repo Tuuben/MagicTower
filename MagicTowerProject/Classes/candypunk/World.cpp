@@ -60,12 +60,13 @@ void World::setCameraPosition(cocos2d::Vec2 position)
 
 void World::setCameraPositionX(float x)
 {
+    x = roundf(x);
     _objectLayer->setPositionX( -x );
 }
 
 void World::setCameraPositionY(float y)
 {
-    
+    y = roundf(y);
     _objectLayer->setPositionY(-y);
 }
 

@@ -69,8 +69,12 @@ void Food::update(float dt){
     if(!_canMove)
         return;
     
-    Vec2 v = Vec2( cos(_elapsedTime) * IDLE_MOVEMENT_SPEED * _directionX * dt, sin(_elapsedTime) * IDLE_MOVEMENT_SPEED * _directionY * dt);
-    setPosition( getPosition() + v);
+    if(!hasFoundPlayer()){
+    
+        Vec2 v = Vec2( cos(_elapsedTime) * IDLE_MOVEMENT_SPEED * _directionX * dt, sin(_elapsedTime) * IDLE_MOVEMENT_SPEED * _directionY * dt);
+        setPosition( getPosition() + v);
+        
+    }
     
     moveTowardPlayer(20.0f, 10.0f, dt);
     
