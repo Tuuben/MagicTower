@@ -38,6 +38,10 @@
 #define PARTICLE_DUST_03 "particle_dust_03.png"
 #define PARTICLE_DUST_04 "particle_dust_04.png"
 #define PARTICLE_SQUARE_01 "particle_square_01.png"
+#define PARTICLE_EXPLOSION_01 "explosion_cloud_01.png"
+#define PARTICLE_EXPLOSION_02 "explosion_cloud_02.png"
+#define PARTICLE_EXPLOSION_03 "explosion_cloud_03.png"
+#define PARTICLE_EXPLOSION_04 "explosion_cloud_04.png"
 
 /*==== < OBJECT SPRITES > ====*/
 #define FOOD_IDLE_01 "food_01.png"
@@ -68,7 +72,8 @@
 #define SWING_BASE_01 "chain_base.png"
 #define SWING_CHAIN_01 "chain_link.png"
 #define SWING_MACE_01 "chain_mace.png"
-#define GRIM_REAPER_GRAVESTONE_01 "grim_gravestone_01.png" 
+#define GRIM_REAPER_GRAVESTONE_01 "grim_gravestone_01.png"
+#define EXPLOSIVE_CRATE_01 "explosive_crate.png"
 
 /*==== < MISC SPRITES > ====*/
 #define GRASS_SPRITE_01 "grass_clutter_01.png"

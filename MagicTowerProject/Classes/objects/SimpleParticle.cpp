@@ -42,6 +42,8 @@ bool SimpleParticle::init(std::string _sprName, float vx, float vy, float lifeTi
 
 void SimpleParticle::update(float dt)
 {
+    Sprite::update(dt);
+    
     if(_dead) return;
     
     _lifeTime -= dt;
@@ -50,10 +52,13 @@ void SimpleParticle::update(float dt)
     
     this->setScale( _endScale + (_startScale - _endScale) * scalePercentage );
     
-    this->setPosition(cocos2d::Vec2( this->getPositionX() + (_vx * dt), this->getPositionY() + (_vy * dt) ) );
+    this->setPosition( cocos2d::Vec2( this->getPositionX() + (_vx * dt), this->getPositionY() + (_vy * dt) ) );
     
-    if(!_ignoreGravity)
-    _vy -= _gravity;
+    if(!_ignoreGravity){
+        
+        _vy -= _gravity;
+        
+    }
     
     if(_lifeTime <= 0 && !_dead)
     {
@@ -62,5 +67,5 @@ void SimpleParticle::update(float dt)
     }
 }
 
-void SimpleParticle::setGravityEnabled(bool enabled){ _ignoreGravity = enabled; }
+void SimpleParticle::setIgnoreGravity(bool enabled){ _ignoreGravity = enabled; }
 

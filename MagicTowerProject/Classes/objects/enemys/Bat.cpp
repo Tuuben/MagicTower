@@ -32,7 +32,7 @@ bool Bat::init(){
     
     animComp = AnimationComponent::createComponent(sprt);
     animComp->addAnimation("idle", {BAT_01, BAT_02, BAT_03, BAT_04});
-    animComp->playAnimation("idle", 14, true, true);
+    animComp->playAnimation("idle", 12, true, true);
     addComponent(animComp);
     
     player = GameScene::getInstance()->getPlayer();

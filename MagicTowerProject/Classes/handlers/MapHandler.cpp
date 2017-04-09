@@ -9,6 +9,7 @@
 #include "MapHandler.h"
 #include "../objects/traps/Swing.h"
 #include "../objects/enemys/Bat.h"
+#include "../objects/traps/ExplosiveCrate.h"
 
 using namespace cocos2d;
 
@@ -61,7 +62,7 @@ void MapHandler::updateMap( float clearPositionY )
      1. randomizes map data 
      2. cleans lose tiles the number of times specified
      */
-    int cleanupItr = 5;
+    int cleanupItr = 0;
     createLevelContentData( cleanupItr );
     
      /* === < LEVEL OBJECTS > ===
@@ -246,11 +247,9 @@ void MapHandler::createLevelContentObjects()
                 int spotFilled = 0;
                 
                 //create spikes
-                if(tileIndex < 15)
+                if(tileIndex < 15 && tileIndex > 0)
                 {
-                    float chance = 100 * CCRANDOM_0_1();
-                    float spawnChance = 10;
-                    if(chance < spawnChance)
+                    if((100 * CCRANDOM_0_1()) < SPIKE_SPAWN_CHANCE)
                     {
                         switch (tileIndex) {
                                 
@@ -279,7 +278,10 @@ void MapHandler::createLevelContentObjects()
                                 break;
                         }
                     }
-                    
+                    else if((100 * CCRANDOM_0_1()) < EXPLOSIVE_SPAWN_CHANCE){
+                        createExplosive(x, y + _baseYIndex);
+                        spotFilled++;
+                    }
                 }
                 
                 //create grass clutter
@@ -299,7 +301,6 @@ void MapHandler::createLevelContentObjects()
                     float chance = 100 * CCRANDOM_0_1();
                     if(chance < CLUTTER_TILE_SPAWN_CHANCE)
                     {
-                        CCLOG("CREATE");
                         createClutterTile(x, y + _baseYIndex, ClutterType::BACKGROUND );
                     }
                 }
@@ -315,7 +316,6 @@ void MapHandler::createLevelContentObjects()
                     }
                     
                     if( (100 * CCRANDOM_0_1()) < BAT_SPAWN_CHANCE) {
-                        CCLOG("BAT");
                         createBat(x, y + _baseYIndex);
                     }
                 }
@@ -508,6 +508,15 @@ void MapHandler::createSpike(int xIndex, int yIndex, Spike::DIRECTION dir)
     spikeNode->setDirection(dir);
     this->addChild(spikeNode);
     _mapNodes.push_back(spikeNode);
+}
+
+void MapHandler::createExplosive(int xIndex, int yIndex){
+
+    ExplosiveCrate* eCrate = ExplosiveCrate::create();
+    eCrate->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
+    this->addChild(eCrate);
+    _mapNodes.push_back(eCrate);
+    
 }
 
 void MapHandler::createSwing(int xIndex, int yIndex){

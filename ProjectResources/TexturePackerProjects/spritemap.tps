@@ -236,6 +236,11 @@
             <filename>../MapObjects/chain_link.png</filename>
             <filename>../MapObjects/chain_mace.png</filename>
             <filename>../MapObjects/grim_gravestone_01.png</filename>
+            <filename>../MapObjects/explosive_crate.png</filename>
+            <filename>../particles/explosion_cloud_01.png</filename>
+            <filename>../particles/explosion_cloud_02.png</filename>
+            <filename>../particles/explosion_cloud_03.png</filename>
+            <filename>../particles/explosion_cloud_04.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

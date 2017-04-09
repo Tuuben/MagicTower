@@ -72,6 +72,8 @@
 		98916F911C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
 		98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABF81E9A36E000894AF2 /* Bat.cpp */; };
 		98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABF81E9A36E000894AF2 /* Bat.cpp */; };
+		98AFABFE1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABFC1E9A91D600894AF2 /* ExplosiveCrate.cpp */; };
+		98AFABFF1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABFC1E9A91D600894AF2 /* ExplosiveCrate.cpp */; };
 		98DA83101C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
 		98DA83111C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -198,6 +200,8 @@
 		98916F8F1C7E0A2500D3D0EB /* FlashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashLayer.h; sourceTree = "<group>"; };
 		98AFABF81E9A36E000894AF2 /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bat.cpp; sourceTree = "<group>"; };
 		98AFABF91E9A36E000894AF2 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
+		98AFABFC1E9A91D600894AF2 /* ExplosiveCrate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExplosiveCrate.cpp; sourceTree = "<group>"; };
+		98AFABFD1E9A91D600894AF2 /* ExplosiveCrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosiveCrate.h; sourceTree = "<group>"; };
 		98DA830E1C7C8458006700AD /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
 		98DA830F1C7C8458006700AD /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -505,6 +509,8 @@
 				F6502F631C81E28100920211 /* Spike.h */,
 				9823DE191E98CDA9003ACFE4 /* Swing.cpp */,
 				9823DE1A1E98CDA9003ACFE4 /* Swing.h */,
+				98AFABFC1E9A91D600894AF2 /* ExplosiveCrate.cpp */,
+				98AFABFD1E9A91D600894AF2 /* ExplosiveCrate.h */,
 			);
 			path = traps;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825D8801C80495700FD4133 /* AudioManager.cpp in Sources */,
+				98AFABFE1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
 				F6200E911C6F19A700102152 /* GameScene.cpp in Sources */,
 				F675F6861C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
 				9815C9521C7B0B600018656C /* World.cpp in Sources */,
@@ -700,6 +707,7 @@
 				F675F6871C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
 				98DA83111C7C8458006700AD /* Food.cpp in Sources */,
 				F6502F5F1C81CE3300920211 /* Pickup.cpp in Sources */,
+				98AFABFF1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,7 +30,9 @@ class MapHandler : public cocos2d::Node
 #define FOOD_SPAWN_CHANCE 1.5f
 #define CLUTTER_TILE_SPAWN_CHANCE 0
 #define SWING_TRAP_SPAWN_CHANCE 4
-#define BAT_SPAWN_CHANCE 0.5f
+#define SPIKE_SPAWN_CHANCE 10
+#define EXPLOSIVE_SPAWN_CHANCE 2
+#define BAT_SPAWN_CHANCE 0.25f
 #define MAX_TILE_SPAWNS 38
 #define MAX_SWING_SPAWNS 2
 #define MAX_BAT_SPAWNS 4
@@ -116,6 +118,7 @@ private:
     void createOuterTile(int xIndex, int yIndex, int dir);
     void createClutterTile(int xIndex, int yIndex, ClutterType clutterType);
     void createSpike(int xIndex, int yIndex, Spike::DIRECTION dir);
+    void createExplosive(int xIndex, int yIndex);
     void createSwing(int xIndex, int yIndex);
     void createBat(int xIndex, int yIndex);
     void createFood(int xIndex, int yIndex);
