@@ -26,11 +26,14 @@ class MapHandler : public cocos2d::Node
 #define BASE_FLOOR_HEIGHT 1
 #define SOLID_TILE_COLOR cocos2d::Color3B(255, 255, 255)
 #define SOLID_SPAWN_CHANCE 80 //50
-#define COIN_SPAWN_CHANCE 10
-#define FOOD_SPAWN_CHANCE 2
+#define COIN_SPAWN_CHANCE 0.2f
+#define FOOD_SPAWN_CHANCE 1.5f
 #define CLUTTER_TILE_SPAWN_CHANCE 0
-#define SWING_TRAP_SPAWN_CHANCE 30
+#define SWING_TRAP_SPAWN_CHANCE 4
+#define BAT_SPAWN_CHANCE 0.5f
 #define MAX_TILE_SPAWNS 38
+#define MAX_SWING_SPAWNS 2
+#define MAX_BAT_SPAWNS 4
     
 #define EMPTY_TILE_ID 0
 #define SOLID_TILE_ID 1
@@ -114,6 +117,7 @@ private:
     void createClutterTile(int xIndex, int yIndex, ClutterType clutterType);
     void createSpike(int xIndex, int yIndex, Spike::DIRECTION dir);
     void createSwing(int xIndex, int yIndex);
+    void createBat(int xIndex, int yIndex);
     void createFood(int xIndex, int yIndex);
     void createCoin(int xIndex, int yIndex);
     
@@ -124,6 +128,8 @@ private:
     int _rowIndex = 0;
     int _colIndex = 0;
     int _baseYIndex = 0;
+    int _swingsSpawned = 0;
+    int _batsSpawned = 0;
     cocos2d::Size _visibleSize;
     std::vector< cocos2d::Node* > _mapNodes;
     std::vector< std::vector<int> > mapData;

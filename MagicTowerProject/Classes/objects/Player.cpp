@@ -31,10 +31,10 @@ bool Player::init( cocos2d::Layer* onLayer )
     _onLayer = onLayer;
     
     //create sprite
-    _sprite = Sprite::createWithSpriteFrameName(ACTOR_SPRITE);
+    _sprite = Sprite::createWithSpriteFrameName("blocky_idle_01.png");
     _sprite->getTexture()->setAliasTexParameters();
     _sprite->setGlobalZOrder(-20);
-    _sprite->setColor(Color3B( 255, 255, 255));
+    _sprite->setColor(Color3B( 255, 255, 255 ));
     this->addChild(_sprite);
 
     //set sprite to animation comp

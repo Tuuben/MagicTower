@@ -76,7 +76,7 @@ void Food::update(float dt){
         
     }
     
-    moveTowardPlayer(20.0f, 10.0f, dt);
+    moveTowardPlayer(20.0f, 40.0f, dt);
     
     _elapsedTime += dt;
     

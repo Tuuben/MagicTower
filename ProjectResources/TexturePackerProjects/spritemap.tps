@@ -235,6 +235,7 @@
             <filename>../MapObjects/chain_base.png</filename>
             <filename>../MapObjects/chain_link.png</filename>
             <filename>../MapObjects/chain_mace.png</filename>
+            <filename>../MapObjects/grim_gravestone_01.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

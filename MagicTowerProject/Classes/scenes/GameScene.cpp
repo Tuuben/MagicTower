@@ -1,5 +1,5 @@
 #include "GameScene.h"
-USING_NS_CC;
+#include "Bat.h"
 
 GameScene* GameScene::_instance = nullptr;
 
@@ -53,6 +53,7 @@ bool GameScene::init()
     {
         return false;
     }
+    
     visibleSize = Director::getInstance()->getVisibleSize();
     
     mapH = MapHandler::create();
@@ -67,6 +68,12 @@ bool GameScene::init()
     flashLayer = FlashLayer::create(FOOD_COLOR);
     flashLayer->setGlobalZOrder(100);
     this->addChild(flashLayer);
+    
+    // TEMP
+    auto grimGraveStoneSpr = Sprite::createWithSpriteFrameName(GRIM_REAPER_GRAVESTONE_01);
+    grimGraveStoneSpr->setPosition(Vec2( visibleSize.width / 2, 42  ));
+    grimGraveStoneSpr->setGlobalZOrder(-80);
+    addObject(grimGraveStoneSpr);
     
     
     this->scheduleUpdate();

@@ -70,6 +70,8 @@
 		98840D8C1E96E013005E1132 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 98840D8A1E96E013005E1132 /* shaders */; };
 		98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
 		98916F911C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
+		98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABF81E9A36E000894AF2 /* Bat.cpp */; };
+		98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABF81E9A36E000894AF2 /* Bat.cpp */; };
 		98DA83101C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
 		98DA83111C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -194,6 +196,8 @@
 		98840D8A1E96E013005E1132 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
 		98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashLayer.cpp; sourceTree = "<group>"; };
 		98916F8F1C7E0A2500D3D0EB /* FlashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashLayer.h; sourceTree = "<group>"; };
+		98AFABF81E9A36E000894AF2 /* Bat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bat.cpp; sourceTree = "<group>"; };
+		98AFABF91E9A36E000894AF2 /* Bat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bat.h; sourceTree = "<group>"; };
 		98DA830E1C7C8458006700AD /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
 		98DA830F1C7C8458006700AD /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -442,6 +446,15 @@
 			path = utility;
 			sourceTree = "<group>";
 		};
+		98AFABF71E9A36D500894AF2 /* enemys */ = {
+			isa = PBXGroup;
+			children = (
+				98AFABF81E9A36E000894AF2 /* Bat.cpp */,
+				98AFABF91E9A36E000894AF2 /* Bat.h */,
+			);
+			path = enemys;
+			sourceTree = "<group>";
+		};
 		F6200E8E1C6F19A700102152 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +467,7 @@
 		F6200EA81C6F1EFD00102152 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				98AFABF71E9A36D500894AF2 /* enemys */,
 				F6502F611C81E27800920211 /* traps */,
 				F6235F311C6F38FB00D9DDC6 /* Player.cpp */,
 				F6235F321C6F38FB00D9DDC6 /* Player.h */,
@@ -654,6 +668,7 @@
 				9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				9815C94C1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9825D8871C80889100FD4133 /* Coin.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
@@ -677,6 +692,7 @@
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				9815C9531C7B0B600018656C /* World.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,
+				98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				9825D8881C80889100FD4133 /* Coin.cpp in Sources */,
 				F6235F341C6F38FB00D9DDC6 /* Player.cpp in Sources */,

@@ -17,9 +17,10 @@ bool Swing::init(){
     
     auto sprite = Sprite::createWithSpriteFrameName(SWING_BASE_01);
     sprite->setColor(OBSTACLE_COLOR);
+    sprite->setGlobalZOrder(50);
     addChild(sprite);
     
-    auto pbody = PhysicsBody::createBox(Size(16,16));
+    auto pbody = PhysicsBody::createBox(Size( 16,16 ));
     pbody->setDynamic(false);
     addComponent(pbody);
     
@@ -39,6 +40,7 @@ void Swing::createChainNodes(int amt){
         
         auto sprite = Sprite::createWithSpriteFrameName(SWING_CHAIN_01);
         sprite->setColor(OBSTACLE_COLOR);
+        sprite->setGlobalZOrder(50);
         auto p = PhysicsBody::createBox(Size(8,8));
         p->setDynamic(true);
         p->setGravityEnable(false);
@@ -53,6 +55,7 @@ void Swing::createChainNodes(int amt){
     //End Object
     auto sprite = Sprite::createWithSpriteFrameName(SWING_MACE_01);
     sprite->setColor(OBSTACLE_COLOR);
+    sprite->setGlobalZOrder(50);
     auto p = PhysicsBody::createBox(Size(16,16));
     p->setDynamic(true);
     p->setGravityEnable(false);

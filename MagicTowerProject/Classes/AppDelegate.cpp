@@ -59,7 +59,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     aaSpriteMapSprite->getTexture()->setAliasTexParameters();
     auto aaTileMapSprite = Sprite::createWithSpriteFrameName(SOLID_TILE_SPRITE_00);
     aaTileMapSprite->getTexture()->setAliasTexParameters();
-    auto aaActorsSprite = Sprite::createWithSpriteFrameName(ACTOR_SPRITE);
+    auto aaActorsSprite = Sprite::createWithSpriteFrameName("blocky_idle_01.png");
     aaActorsSprite->getTexture()->setAliasTexParameters();
     
     //cache audio

@@ -26,7 +26,10 @@
 #define SPRITEMAP_PLIST_PATH "textures/spritemap.plist"
 
 /*==== < ACTOR SPRITES > ====*/
-#define ACTOR_SPRITE "bat_idle_01.png"
+#define BAT_01 "bat_01.png"
+#define BAT_02 "bat_02.png"
+#define BAT_03 "bat_03.png"
+#define BAT_04 "bat_04.png"
 
 /*==== < PARTICLE SPRITES > ====*/
 #define PARTICLE_CIRCLE_01 "particle_01.png"
@@ -65,6 +68,7 @@
 #define SWING_BASE_01 "chain_base.png"
 #define SWING_CHAIN_01 "chain_link.png"
 #define SWING_MACE_01 "chain_mace.png"
+#define GRIM_REAPER_GRAVESTONE_01 "grim_gravestone_01.png" 
 
 /*==== < MISC SPRITES > ====*/
 #define GRASS_SPRITE_01 "grass_clutter_01.png"

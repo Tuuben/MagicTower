@@ -8,6 +8,7 @@
 
 #include "MapHandler.h"
 #include "../objects/traps/Swing.h"
+#include "../objects/enemys/Bat.h"
 
 using namespace cocos2d;
 
@@ -42,6 +43,10 @@ bool MapHandler::init() {
 
 void MapHandler::updateMap( float clearPositionY )
 {
+    // Reset variables
+    _swingsSpawned = 0;
+    _batsSpawned = 0;
+    
     /* === < REMOVE OLD > ===
     1. remove old tiles and walls
     */
@@ -227,6 +232,13 @@ void MapHandler::createLevelContentObjects()
                 {
                     createSolidTile(x, y + _baseYIndex, tileIndex);
                 }
+                
+                // create swing traps
+                if( (tileIndex < 15) && ((100 * CCRANDOM_0_1()) < SWING_TRAP_SPAWN_CHANCE) && (x > 4) && (x < LEVEL_BLOCK_WIDTH - 4) ){
+                
+                    createSwing(x, y + _baseYIndex);
+                    
+                }
             }
             
             if(mapData[x][y] == EMPTY_TILE_ID)
@@ -292,18 +304,19 @@ void MapHandler::createLevelContentObjects()
                     }
                 }
                 
-                //create food and coins
                 if(tileIndex == 0 && spotFilled < 1)
                 {
-                    float chance = 100 * CCRANDOM_0_1();
-                    if(chance < FOOD_SPAWN_CHANCE)
-                    {
-                        float spawnCoinChance = 100 * CCRANDOM_0_1();
-                        
-                        if(spawnCoinChance < COIN_SPAWN_CHANCE)
-                            createCoin(x, y + _baseYIndex);
-                        else
-                            createFood(x, y + _baseYIndex);
+                    
+                    if((100 * CCRANDOM_0_1()) < COIN_SPAWN_CHANCE){
+                        createCoin(x, y + _baseYIndex);
+                    }
+                    else if( (100 * CCRANDOM_0_1()) < FOOD_SPAWN_CHANCE){
+                        createFood(x, y + _baseYIndex);
+                    }
+                    
+                    if( (100 * CCRANDOM_0_1()) < BAT_SPAWN_CHANCE) {
+                        CCLOG("BAT");
+                        createBat(x, y + _baseYIndex);
                     }
                 }
                 
@@ -336,16 +349,18 @@ void MapHandler::createLargeLevelContentObjects(){
             
             if(!foundSolidInGrid){
                 int halfGridHeight = 6;
+                
                 if( 100 * CCRANDOM_0_1() < SWING_TRAP_SPAWN_CHANCE){
+                    CCLOG("SPAWN SWINGUGURURU");
                     int xIndex = bX + (4 * CCRANDOM_0_1()) + 6;
                     int yIndex = bY + halfGridHeight;
                     createSwing( xIndex, yIndex + _baseYIndex );
                     mapData[xIndex][yIndex] = 1;
+                    
                 }
+                
             }
-            else{
-                CCLOG("NO OPENINGS");
-            }
+          
             
         }
     
@@ -447,7 +462,8 @@ void MapHandler::createSolidTile(int xIndex, int yIndex, int tileIndex)
     auto tile = Sprite::createWithSpriteFrameName(spritePath);
     tile->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
     tile->setColor(SOLID_TILE_COLOR);
-    this->addChild(tile, 10);
+    tile->setGlobalZOrder(10);
+    this->addChild(tile, 0);
     
     _mapNodes.push_back(tile);
     
@@ -465,9 +481,8 @@ void MapHandler::createOuterTile(int xIndex, int yIndex, int dir)
     auto tile = Sprite::createWithSpriteFrameName(OUTER_TILE_SPRITE_01);
     tile->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
     tile->setScaleX(tile->getScaleX() * dir );
-//    tile->cocos2d::Node::setPositionZ(30);
-    this->addChild(tile, 10);
-    
+    tile->setGlobalZOrder(100);
+    this->addChild(tile);
     _mapNodes.push_back(tile);
     
     //create physics body
@@ -497,10 +512,28 @@ void MapHandler::createSpike(int xIndex, int yIndex, Spike::DIRECTION dir)
 
 void MapHandler::createSwing(int xIndex, int yIndex){
 
+    if( _swingsSpawned >= MAX_SWING_SPAWNS )
+        return;
+    
     Swing* swing = Swing::create();
     swing->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
-    this->addChild(swing);
+    this->addChild(swing, 10);
     _mapNodes.push_back(swing);
+    _swingsSpawned++;
+    
+}
+
+void MapHandler::createBat(int xIndex, int yIndex){
+
+    if( _batsSpawned >= MAX_BAT_SPAWNS){
+        return;
+    }
+    
+    Bat* bat = Bat::create();
+    bat->setPosition( Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH) );
+    this->addChild(bat);
+    _mapNodes.push_back(bat);
+    _batsSpawned++;
     
 }
 

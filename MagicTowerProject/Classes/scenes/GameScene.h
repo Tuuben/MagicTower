@@ -8,6 +8,8 @@
 #include "../candypunk/World.h"
 #include "../objects/FlashLayer.h"
 
+USING_NS_CC;
+
 class GameScene : public World
 {
 #define MIN_CAMERA_POS 10

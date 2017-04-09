@@ -78,8 +78,9 @@ void Pickup::moveTowardPlayer(float speed, float minDistance, float dt){
         Vec2 playerPos = playerObj->getParent()->convertToWorldSpace( playerObj->getPosition() );
         Vec2 curPos = getParent()->convertToWorldSpace(getPosition());
         
-        Vec2 diff = Vec2( (curPos.x - playerPos.x) * (curPos.x - playerPos.x), ( curPos.y - playerPos.y) * (curPos.y - playerPos.y) );
-        float distance = sqrtf(diff.x - diff.y);
+        Vec2 diff = Vec2( powf((curPos.x - playerPos.x), 2), powf(( curPos.y - playerPos.y), 2) );
+        float distance = sqrtf(diff.x + diff.y);
+        
         float angle = atan2( playerPos.y - curPos.y, playerPos.x - curPos.x);
         
         

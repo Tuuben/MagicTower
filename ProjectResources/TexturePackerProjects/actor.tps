@@ -6,7 +6,7 @@
         <key>texturePackerVersion</key>
         <string>4.0.2</string>
         <key>fileName</key>
-        <string>/Users/tobiashelsing/Desktop/Fruktbox/Projects-Xcode/Magic Tower/ProjectResources/TexturePackerProjects/actor.tps</string>
+        <string>/Users/tobiashelsing/Desktop/Neonhook/Games/MagicTower/ProjectResources/TexturePackerProjects/actor.tps</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -192,13 +192,6 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../Actors/bat_fly_01.png</filename>
-            <filename>../Actors/bat_fly_02.png</filename>
-            <filename>../Actors/bat_fly_03.png</filename>
-            <filename>../Actors/bat_fly_04.png</filename>
-            <filename>../Actors/bat_fly_05.png</filename>
-            <filename>../Actors/bat_idle_01.png</filename>
-            <filename>../Actors/bat_idle_02.png</filename>
             <filename>../Actors/blocky.png</filename>
             <filename>../Actors/blocky_fall_01.png</filename>
             <filename>../Actors/blocky_idle_01.png</filename>
@@ -218,6 +211,10 @@
             <filename>../Actors/blocky_eat_04.png</filename>
             <filename>../Actors/blocky_eat_05.png</filename>
             <filename>../Actors/blocky_eat_06.png</filename>
+            <filename>../Actors/bat_01.png</filename>
+            <filename>../Actors/bat_03.png</filename>
+            <filename>../Actors/bat_04.png</filename>
+            <filename>../Actors/bat_02.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
