@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "../misc/Background.h"
+#include "../candypunk/utility/Utils.h"
 
 GameScene* GameScene::_instance = nullptr;
 
@@ -62,7 +63,7 @@ bool GameScene::init()
     addObject(mapH);
     
     playerObj = Player::create( getObjectLayer() );
-    playerObj->setPosition(Vec2( visibleSize.width / 2, visibleSize.height / 2 ));
+    playerObj->setPosition(Vec2( visibleSize.width / 2, (visibleSize.height / 2) * 0.14f ));
     addObject(playerObj);
     
     flashLayer = FlashLayer::create(FOOD_COLOR);
@@ -89,10 +90,19 @@ bool GameScene::init()
 
 void GameScene::update(float dt)
 {
+    
     World::update(dt);
     
-    setCameraPositionX( MathUtil::lerp(getCameraPositionX(), 0, dt * 5) );
-    setCameraPositionY( getCameraPositionY() + (CAMERA_SPEED * dt) );
+    float targetPos = (getCameraPositionY() > minCameraYPosition) ? playerObj->getPositionY() - 100 : minCameraYPosition;
+    setCameraPosition( Utils::lerp(getCameraPosition(), Vec2( 0, targetPos ), 3.0f * dt) );
+    
+    
+    if(playerObj->getPositionY() > lastPlayerPosY){
+        
+        lastPlayerPosY = playerObj->getPositionY();
+        minCameraYPosition = lastPlayerPosY - 220;
+        
+    }
     
     //check if should update map
     if( (getCameraPositionY() + visibleSize.height) >= mapH->getMapHeight() - 150)

@@ -41,6 +41,8 @@ public:
 
 private:
     static GameScene* _instance;
+    float minCameraYPosition = -100.0f;
+    float lastPlayerPosY = -100.0f;
 };
 
 #endif // __GAMESCENE_SCENE_H__
