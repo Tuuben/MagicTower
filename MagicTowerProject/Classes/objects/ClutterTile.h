@@ -17,6 +17,7 @@
 enum ClutterType
 {
     GRASS = 0,
+    BANNER = 1,
     BACKGROUND,
 };
 

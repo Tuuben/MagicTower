@@ -45,7 +45,7 @@ bool Coin::init()
 
 void Coin::onPickUpObject()
 {
-    getAnimationComponent()->playAnimation("pick-up", 16, false);
+    getAnimationComponent()->playAnimation("pick-up", 20, false);
     getAnimationComponent()->onAnimationFinished( CC_CALLBACK_0(Coin::destroySelf, this) );
     
     this->getPhysicsBody()->setEnabled(false);

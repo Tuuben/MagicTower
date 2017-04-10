@@ -208,6 +208,11 @@
             <filename>../Tilemap/solidTile_14.png</filename>
             <filename>../Tilemap/solidTile_01.png</filename>
             <filename>../Tilemap/solidTile_02.png</filename>
+            <filename>../Tilemap/background_tile_01.png</filename>
+            <filename>../Tilemap/background_tile_02.png</filename>
+            <filename>../Tilemap/background_tile_03.png</filename>
+            <filename>../Tilemap/background_tile_04.png</filename>
+            <filename>../Tilemap/solid_full.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

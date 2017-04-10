@@ -284,25 +284,24 @@ void MapHandler::createLevelContentObjects()
                     }
                 }
                 
-                //create grass clutter
+                // Create grass clutter
                 if( (tileIndex == 4 || tileIndex == 5 || tileIndex == 6 || tileIndex == 12) && spotFilled < 1)
                 {
-                    float chance = 100 * CCRANDOM_0_1();
-                    float spawnChance = 70;
-                    if(chance < spawnChance)
+                    if( (100 * CCRANDOM_0_1()) < GRASS_SPAWN_CHANCE)
                     {
                         createClutterTile(x, y + _baseYIndex, ClutterType::GRASS );
                     }
                 }
                 
-                //create background clutter
-                if(tileIndex <= 15 && spotFilled < 1)
-                {
-                    float chance = 100 * CCRANDOM_0_1();
-                    if(chance < CLUTTER_TILE_SPAWN_CHANCE)
-                    {
-                        createClutterTile(x, y + _baseYIndex, ClutterType::BACKGROUND );
+                // Create banenrs
+                if( tileIndex == 1 && spotFilled < 1){
+                    
+                    if( (100 * CCRANDOM_0_1()) < BANNER_SPAWN_CHANCE ){
+                        
+                        createClutterTile(x, y + _baseYIndex, ClutterType::BANNER);
+                        
                     }
+                    
                 }
                 
                 if(tileIndex == 0 && spotFilled < 1)

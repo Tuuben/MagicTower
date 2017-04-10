@@ -28,7 +28,6 @@ class MapHandler : public cocos2d::Node
 #define SOLID_SPAWN_CHANCE 80 //50
 #define COIN_SPAWN_CHANCE 0.2f
 #define FOOD_SPAWN_CHANCE 1.5f
-#define CLUTTER_TILE_SPAWN_CHANCE 0
 #define SWING_TRAP_SPAWN_CHANCE 4
 #define SPIKE_SPAWN_CHANCE 10
 #define EXPLOSIVE_SPAWN_CHANCE 2
@@ -39,6 +38,10 @@ class MapHandler : public cocos2d::Node
     
 #define EMPTY_TILE_ID 0
 #define SOLID_TILE_ID 1
+    
+// MISC
+#define GRASS_SPAWN_CHANCE 50
+#define BANNER_SPAWN_CHANCE 20
     
 /**
 * @class MapHandler

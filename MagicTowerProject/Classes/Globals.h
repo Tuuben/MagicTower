@@ -42,6 +42,10 @@
 #define PARTICLE_EXPLOSION_02 "explosion_cloud_02.png"
 #define PARTICLE_EXPLOSION_03 "explosion_cloud_03.png"
 #define PARTICLE_EXPLOSION_04 "explosion_cloud_04.png"
+#define PARTICLE_CLUTTER_01 "clutter_debri_01.png"
+#define PARTICLE_CLUTTER_02 "clutter_debri_02.png"
+#define PARTICLE_CLUTTER_03 "clutter_debri_03.png"
+#define PARTICLE_CLUTTER_04 "clutter_debri_04.png"
 
 /*==== < OBJECT SPRITES > ====*/
 #define FOOD_IDLE_01 "food_01.png"
@@ -77,6 +81,17 @@
 
 /*==== < MISC SPRITES > ====*/
 #define GRASS_SPRITE_01 "grass_clutter_01.png"
+#define VASE_SPRITE_01 "vase.png"
+#define CRATE_SPRITE_01 "crate.png"
+#define CANDLE_STICK_SPRITE_01 "candle.png"
+#define BANNER_01 "banner_01.png"
+#define BANNER_02 "banner_02.png"
+#define BANNER_03 "banner_03.png"
+#define BANNER_04 "banner_04.png"
+#define BANNER_05 "banner_05.png"
+#define BANNER_06 "banner_06.png"
+#define BANNER_07 "banner_07.png"
+#define BANNER_08 "banner_08.png"
 #define DITHERING_TILE "dithering.png"
 
 /*==== < TILEMAP SPRITES > ====*/
@@ -96,7 +111,12 @@
 #define SOLID_TILE_SPRITE_13 "solidTile_14.png"
 #define SOLID_TILE_SPRITE_14 "solidTile_08.png"
 #define SOLID_TILE_SPRITE_15 "solidTile.png"
+#define SOLID_TILE_FULL_BLACK "solid_full.png"
 #define OUTER_TILE_SPRITE_01 "outerTile.png"
+#define BACKGROUND_TILE_01 "background_tile_01.png"
+#define BACKGROUND_TILE_02 "background_tile_01.png"
+#define BACKGROUND_TILE_03 "background_tile_01.png"
+#define BACKGROUND_TILE_04 "background_tile_01.png"
 
 /*==== < COLORS > ====*/
 #define FOOD_COLOR cocos2d::Color3B( 60, 188, 252 )

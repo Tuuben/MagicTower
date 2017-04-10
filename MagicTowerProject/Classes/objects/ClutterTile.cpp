@@ -42,23 +42,22 @@ bool ClutterTile::init(ClutterType clutterType)
         
         this->setGlobalZOrder(-50);
         
-        Color3B primaryColor(0, 255, 0);
-        Color3B secondaryColor(216, 248, 120);
-        this->setColor( secondaryColor );//( (100 * CCRANDOM_0_1()) < 50 ) ? primaryColor : secondaryColor );
+        Color3B primaryColor(216, 248, 120);
+        this->setColor( primaryColor );
         
     }
-    else if(clutterType == ClutterType::BACKGROUND){
+    else if(clutterType == ClutterType::BANNER){
         
-        std::stringstream clutterSpritePath;
-        int index = (int)( 4 * CCRANDOM_0_1() + 1 );
-        index = (int)clampf(index, 0, 4);
-        clutterSpritePath << "wall_clutter_" << index << ".png";
-        CCLOG("%s", clutterSpritePath.str().c_str());
+        initWithSpriteFrameName( BANNER_01 );
         
-        initWithSpriteFrameName(clutterSpritePath.str());
-//        this->setColor( Color3B(77, 77, 77));
-        this->setGlobalZOrder(-50);
-//        this->setPositionZ(-10);
+        _animComp->addAnimation( "idle", { BANNER_01, BANNER_02, BANNER_03, BANNER_04, BANNER_05, BANNER_06, BANNER_07, BANNER_08 } );
+        _animComp->playAnimation( "idle", 12 );
+        
+        this->setGlobalZOrder(40);
+        
+        this->setScale(-1, 1);
+        this->setColor( Color3B(255, 230, 183) );
+
     }
     
     

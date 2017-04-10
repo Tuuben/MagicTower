@@ -197,10 +197,6 @@
             <filename>../Clutter/grass_clutter_01.png</filename>
             <filename>../Clutter/grass_clutter_02.png</filename>
             <filename>../Clutter/grass_clutter_03.png</filename>
-            <filename>../Clutter/wall_clutter_1.png</filename>
-            <filename>../Clutter/wall_clutter_2.png</filename>
-            <filename>../Clutter/wall_clutter_3.png</filename>
-            <filename>../Clutter/wall_clutter_4.png</filename>
             <filename>../Clutter/grass_clutter_04.png</filename>
             <filename>../MapObjects/food_01.png</filename>
             <filename>../MapObjects/food_02.png</filename>
@@ -241,6 +237,20 @@
             <filename>../particles/explosion_cloud_02.png</filename>
             <filename>../particles/explosion_cloud_03.png</filename>
             <filename>../particles/explosion_cloud_04.png</filename>
+            <filename>../particles/clutter_debri_01.png</filename>
+            <filename>../particles/clutter_debri_02.png</filename>
+            <filename>../particles/clutter_debri_03.png</filename>
+            <filename>../Clutter/candle.png</filename>
+            <filename>../Clutter/crate.png</filename>
+            <filename>../Clutter/vase.png</filename>
+            <filename>../Clutter/banner_01.png</filename>
+            <filename>../Clutter/banner_02.png</filename>
+            <filename>../Clutter/banner_03.png</filename>
+            <filename>../Clutter/banner_04.png</filename>
+            <filename>../Clutter/banner_05.png</filename>
+            <filename>../Clutter/banner_06.png</filename>
+            <filename>../Clutter/banner_07.png</filename>
+            <filename>../Clutter/banner_08.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
