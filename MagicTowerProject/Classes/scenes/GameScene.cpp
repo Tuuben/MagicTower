@@ -1,5 +1,5 @@
 #include "GameScene.h"
-#include "Bat.h"
+#include "../misc/Background.h"
 
 GameScene* GameScene::_instance = nullptr;
 
@@ -75,6 +75,7 @@ bool GameScene::init()
     grimGraveStoneSpr->setGlobalZOrder(-80);
     addObject(grimGraveStoneSpr);
     
+   // createBackground();
     
     this->scheduleUpdate();
     
@@ -82,7 +83,7 @@ bool GameScene::init()
     keyBoardEventListener->onKeyPressed = CC_CALLBACK_2( GameScene::onKeyPressed, this);
     
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyBoardEventListener, this);
-    
+
     return true;
 }
 
@@ -92,8 +93,6 @@ void GameScene::update(float dt)
     
     setCameraPositionX( MathUtil::lerp(getCameraPositionX(), 0, dt * 5) );
     setCameraPositionY( getCameraPositionY() + (CAMERA_SPEED * dt) );
-    
-//    setCameraPositionY( playerObj->getPositionY() -  (visibleSize.height / 2) );
     
     //check if should update map
     if( (getCameraPositionY() + visibleSize.height) >= mapH->getMapHeight() - 150)
@@ -108,6 +107,21 @@ void GameScene::flashColor( Color3B color )
 {
     flashLayer->setColor(color);
     flashLayer->flash(30, 0.14f);
+}
+
+void GameScene::createBackground(){
+
+    auto bg1 = Background::create();
+    bg1->setPosition(Vec2(0,0));
+    addObject(bg1);
+    
+    auto bg2 = Background::create();
+    bg2->setPosition(Vec2(0, bg1->getTopPos()));
+    addObject(bg2);
+    
+    bg1->setOther(bg2);
+    bg2->setOther(bg1);
+
 }
 
 Player* GameScene::getPlayer(){

@@ -82,7 +82,7 @@ void ClutterObject::breakObject(){
     
     GameScene::getInstance()->setScreenShake(0.1, 4.0f, 4.0f);
     
-    for(int i = 0; i < 12; i++){
+    for(int i = 0; i < 8; i++){
     
         std::string strNames[] = { PARTICLE_CLUTTER_01, PARTICLE_CLUTTER_02, PARTICLE_CLUTTER_03 };
         float vx = 240.0f * CCRANDOM_0_1() - 120.0f;

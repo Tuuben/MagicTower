@@ -24,8 +24,8 @@ public:
     virtual bool init();
     
     void update(float dt);
-    
     void flashColor( cocos2d::Color3B color );
+    void createBackground();
     
     Player* getPlayer();
     

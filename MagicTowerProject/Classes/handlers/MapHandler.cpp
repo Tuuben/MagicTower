@@ -103,8 +103,13 @@ void MapHandler::createLevelBlockOutline()
 {
     for(int i = _baseYIndex; i < _baseYIndex + LEVEL_BLOCK_HEIGHT; i++)
     {
+        createSolidTile(-1, i, 15);
+        createSolidTile(-2, i, 15);
         createOuterTile( 0, i, -1);
         createOuterTile( LEVEL_BLOCK_WIDTH, i, 1);
+        createSolidTile( LEVEL_BLOCK_WIDTH + 1, i, 15);
+        createSolidTile( LEVEL_BLOCK_WIDTH + 2, i, 15);
+        
     }
     _baseYIndex += LEVEL_BLOCK_HEIGHT;
     
@@ -233,7 +238,7 @@ void MapHandler::createLevelContentObjects()
             if(mapData[x][y] == SOLID_TILE_ID)
             {
                 //create solid tile
-                if(tileIndex < 15)
+                if(tileIndex <= 15)
                 {
                     createSolidTile(x, y + _baseYIndex, tileIndex);
                 }
@@ -463,6 +468,9 @@ void MapHandler::createSolidTile(int xIndex, int yIndex, int tileIndex)
             break;
         case 14:
             spritePath = SOLID_TILE_SPRITE_14;
+            break;
+        case 15:
+            spritePath = SOLID_TILE_FULL_BLACK;
             break;
         default:
             break;

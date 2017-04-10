@@ -4,7 +4,7 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>outerTile.png</key>
+            <key>background_tile_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -19,7 +19,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile.png</key>
+            <key>background_tile_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -34,7 +34,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_01.png</key>
+            <key>background_tile_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -49,7 +49,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_02.png</key>
+            <key>background_tile_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -64,7 +64,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_03.png</key>
+            <key>outerTile.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -79,7 +79,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_04.png</key>
+            <key>solidTile.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -94,7 +94,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_05.png</key>
+            <key>solidTile_01.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -109,7 +109,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_06.png</key>
+            <key>solidTile_02.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -124,7 +124,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_07.png</key>
+            <key>solidTile_03.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -139,7 +139,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_08.png</key>
+            <key>solidTile_04.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -154,7 +154,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_09.png</key>
+            <key>solidTile_05.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -169,7 +169,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_10.png</key>
+            <key>solidTile_06.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -184,7 +184,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_11.png</key>
+            <key>solidTile_07.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -199,7 +199,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_12.png</key>
+            <key>solidTile_08.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -214,7 +214,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_13.png</key>
+            <key>solidTile_09.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -229,7 +229,7 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>solidTile_14.png</key>
+            <key>solidTile_10.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
@@ -244,6 +244,81 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>solidTile_11.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{7,111},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>solidTile_12.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{33,111},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>solidTile_13.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{59,111},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>solidTile_14.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{85,111},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>solid_full.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{16,16}</string>
+                <key>spriteSourceSize</key>
+                <string>{16,16}</string>
+                <key>textureRect</key>
+                <string>{{7,137},{16,16}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -252,9 +327,9 @@
             <key>realTextureFileName</key>
             <string>tilemap.png</string>
             <key>size</key>
-            <string>{128,128}</string>
+            <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7cf015849631fce64abc1158e82cebe2:a684efb80bc8062f818c9dcd15c0d99d:63a6360c4370b8e08215c25110aa6762$</string>
+            <string>$TexturePacker:SmartUpdate:14eb7b479f8a29b21d53779bb5700de3:bfe53d6ab89a18e725502ba0760c0726:63a6360c4370b8e08215c25110aa6762$</string>
             <key>textureFileName</key>
             <string>tilemap.png</string>
         </dict>

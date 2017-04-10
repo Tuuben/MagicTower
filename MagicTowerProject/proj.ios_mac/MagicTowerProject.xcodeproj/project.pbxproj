@@ -66,6 +66,8 @@
 		9825D8881C80889100FD4133 /* Coin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D8851C80889100FD4133 /* Coin.cpp */; };
 		983CA8951E9BD686003E37E6 /* ClutterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8931E9BD686003E37E6 /* ClutterObject.cpp */; };
 		983CA8961E9BD686003E37E6 /* ClutterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8931E9BD686003E37E6 /* ClutterObject.cpp */; };
+		983CA89B1E9BEFE9003E37E6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8991E9BEFE9003E37E6 /* Background.cpp */; };
+		983CA89C1E9BEFE9003E37E6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8991E9BEFE9003E37E6 /* Background.cpp */; };
 		987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		98840D8B1E96E013005E1132 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 98840D8A1E96E013005E1132 /* shaders */; };
@@ -196,6 +198,8 @@
 		9825D8861C80889100FD4133 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		983CA8931E9BD686003E37E6 /* ClutterObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterObject.cpp; sourceTree = "<group>"; };
 		983CA8941E9BD686003E37E6 /* ClutterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterObject.h; sourceTree = "<group>"; };
+		983CA8991E9BEFE9003E37E6 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		983CA89A1E9BEFE9003E37E6 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterTile.cpp; sourceTree = "<group>"; };
 		987114801C748DAE0062FCA9 /* ClutterTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterTile.h; sourceTree = "<group>"; };
 		98840D7E1E96BC1A005E1132 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -367,6 +371,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				983CA8981E9BEFBF003E37E6 /* misc */,
 				9815C9461C7B0B490018656C /* candypunk */,
 				F6200EA91C6F1F1000102152 /* handlers */,
 				F6200EA81C6F1EFD00102152 /* objects */,
@@ -444,6 +449,16 @@
 				9815C9491C7B0B490018656C /* AnimationComponent.h */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		983CA8981E9BEFBF003E37E6 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				983CA8991E9BEFE9003E37E6 /* Background.cpp */,
+				983CA89A1E9BEFE9003E37E6 /* Background.h */,
+			);
+			name = misc;
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		98840D7D1E96BC1A005E1132 /* utility */ = {
@@ -690,6 +705,7 @@
 				987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				F6502F641C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAC1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
+				983CA89B1E9BEFE9003E37E6 /* Background.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +720,7 @@
 				F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
 				F6200E921C6F19A700102152 /* GameScene.cpp in Sources */,
 				983CA8961E9BD686003E37E6 /* ClutterObject.cpp in Sources */,
+				983CA89C1E9BEFE9003E37E6 /* Background.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				9815C9531C7B0B600018656C /* World.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,
