@@ -18,6 +18,7 @@
 #define FOOD_BITMASK 0x000003
 #define COIN_BITMASK 0x000004
 #define OBSTACLE_BITMASK 0x000005
+#define CLUTTER_OBJECT_BITMASK 0x000006
 #define SOILD_IGNORE_BITMASK_CATEGORY -50
 
 /*==== < PLIST'S > ====*/
@@ -45,7 +46,6 @@
 #define PARTICLE_CLUTTER_01 "clutter_debri_01.png"
 #define PARTICLE_CLUTTER_02 "clutter_debri_02.png"
 #define PARTICLE_CLUTTER_03 "clutter_debri_03.png"
-#define PARTICLE_CLUTTER_04 "clutter_debri_04.png"
 
 /*==== < OBJECT SPRITES > ====*/
 #define FOOD_IDLE_01 "food_01.png"

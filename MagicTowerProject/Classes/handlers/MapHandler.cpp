@@ -7,9 +7,13 @@
 //
 
 #include "MapHandler.h"
+#include "../objects/Player.h"
+#include "../objects/Food.h"
+#include "../objects/Coin.h"
 #include "../objects/traps/Swing.h"
 #include "../objects/enemys/Bat.h"
 #include "../objects/traps/ExplosiveCrate.h"
+#include "../objects/ClutterObject.h"
 
 using namespace cocos2d;
 
@@ -284,12 +288,19 @@ void MapHandler::createLevelContentObjects()
                     }
                 }
                 
-                // Create grass clutter
+                // Create clutter
                 if( (tileIndex == 4 || tileIndex == 5 || tileIndex == 6 || tileIndex == 12) && spotFilled < 1)
                 {
                     if( (100 * CCRANDOM_0_1()) < GRASS_SPAWN_CHANCE)
                     {
+                        
                         createClutterTile(x, y + _baseYIndex, ClutterType::GRASS );
+                        
+                    }
+                    else if( (100 * CCRANDOM_0_1() < CLUTTER_OBJECT_SPAWN_CHANCE)){
+                    
+                        createClutterObject(x, y + _baseYIndex);
+                        
                     }
                 }
                 
@@ -350,7 +361,6 @@ void MapHandler::createLargeLevelContentObjects(){
                 int halfGridHeight = 6;
                 
                 if( 100 * CCRANDOM_0_1() < SWING_TRAP_SPAWN_CHANCE){
-                    CCLOG("SPAWN SWINGUGURURU");
                     int xIndex = bX + (4 * CCRANDOM_0_1()) + 6;
                     int yIndex = bY + halfGridHeight;
                     createSwing( xIndex, yIndex + _baseYIndex );
@@ -498,6 +508,15 @@ void MapHandler::createClutterTile(int xIndex, int yIndex, ClutterType clutterTy
     cTile->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
     this->addChild(cTile);
      _mapNodes.push_back(cTile);
+}
+
+void MapHandler::createClutterObject(int xIndex, int yIndex){
+
+    ClutterObject* cObj = ClutterObject::create();
+    cObj->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
+    this->addChild(cObj);
+    _mapNodes.push_back(cObj);
+    
 }
 
 void MapHandler::createSpike(int xIndex, int yIndex, Spike::DIRECTION dir)

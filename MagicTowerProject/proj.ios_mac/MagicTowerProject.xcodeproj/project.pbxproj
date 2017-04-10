@@ -64,6 +64,8 @@
 		9825D8841C804B6400FD4133 /* audio in Resources */ = {isa = PBXBuildFile; fileRef = 9825D8821C804B6400FD4133 /* audio */; };
 		9825D8871C80889100FD4133 /* Coin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D8851C80889100FD4133 /* Coin.cpp */; };
 		9825D8881C80889100FD4133 /* Coin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D8851C80889100FD4133 /* Coin.cpp */; };
+		983CA8951E9BD686003E37E6 /* ClutterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8931E9BD686003E37E6 /* ClutterObject.cpp */; };
+		983CA8961E9BD686003E37E6 /* ClutterObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8931E9BD686003E37E6 /* ClutterObject.cpp */; };
 		987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		98840D8B1E96E013005E1132 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 98840D8A1E96E013005E1132 /* shaders */; };
@@ -192,6 +194,8 @@
 		9825D8821C804B6400FD4133 /* audio */ = {isa = PBXFileReference; lastKnownFileType = folder; path = audio; sourceTree = "<group>"; };
 		9825D8851C80889100FD4133 /* Coin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coin.cpp; sourceTree = "<group>"; };
 		9825D8861C80889100FD4133 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
+		983CA8931E9BD686003E37E6 /* ClutterObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterObject.cpp; sourceTree = "<group>"; };
+		983CA8941E9BD686003E37E6 /* ClutterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterObject.h; sourceTree = "<group>"; };
 		9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterTile.cpp; sourceTree = "<group>"; };
 		987114801C748DAE0062FCA9 /* ClutterTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterTile.h; sourceTree = "<group>"; };
 		98840D7E1E96BC1A005E1132 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -487,6 +491,8 @@
 				9825D8861C80889100FD4133 /* Coin.h */,
 				F6502F5C1C81CE3300920211 /* Pickup.cpp */,
 				F6502F5D1C81CE3300920211 /* Pickup.h */,
+				983CA8931E9BD686003E37E6 /* ClutterObject.cpp */,
+				983CA8941E9BD686003E37E6 /* ClutterObject.h */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -667,6 +673,7 @@
 				98AFABFE1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
 				F6200E911C6F19A700102152 /* GameScene.cpp in Sources */,
 				F675F6861C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
+				983CA8951E9BD686003E37E6 /* ClutterObject.cpp in Sources */,
 				9815C9521C7B0B600018656C /* World.cpp in Sources */,
 				F6235F331C6F38FB00D9DDC6 /* Player.cpp in Sources */,
 				98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */,
@@ -696,6 +703,7 @@
 				F6502F651C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
 				F6200E921C6F19A700102152 /* GameScene.cpp in Sources */,
+				983CA8961E9BD686003E37E6 /* ClutterObject.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				9815C9531C7B0B600018656C /* World.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,

@@ -60,6 +60,12 @@ void SimpleParticle::update(float dt)
         
     }
     
+    if(_torqueForce != -999.0f){
+        
+        this->setRotation(getRotation() + _torqueForce * dt);
+        
+    }
+    
     if(_lifeTime <= 0 && !_dead)
     {
         this->removeFromParent();

@@ -12,10 +12,7 @@
 #include <stdio.h>
 #include "../Globals.h"
 #include "../../cocos2d/cocos/cocos2d.h"
-#include "../objects/Player.h"
 #include "../objects/ClutterTile.h"
-#include "../objects/Food.h"
-#include "../objects/Coin.h"
 #include "../objects/traps/Spike.h"
 
 class MapHandler : public cocos2d::Node
@@ -41,6 +38,7 @@ class MapHandler : public cocos2d::Node
     
 // MISC
 #define GRASS_SPAWN_CHANCE 50
+#define CLUTTER_OBJECT_SPAWN_CHANCE 35
 #define BANNER_SPAWN_CHANCE 20
     
 /**
@@ -120,6 +118,7 @@ private:
     void createSolidTile(int xIndex, int yIndex, int tileIndex);
     void createOuterTile(int xIndex, int yIndex, int dir);
     void createClutterTile(int xIndex, int yIndex, ClutterType clutterType);
+    void createClutterObject(int xIndex, int yIndex);
     void createSpike(int xIndex, int yIndex, Spike::DIRECTION dir);
     void createExplosive(int xIndex, int yIndex);
     void createSwing(int xIndex, int yIndex);

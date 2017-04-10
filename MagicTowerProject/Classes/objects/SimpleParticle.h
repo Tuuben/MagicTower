@@ -20,10 +20,12 @@ public:
     void update(float dt) override;
     
     void setIgnoreGravity(bool enabled);
+    void setTorque(float force){ _torqueForce = force; };
 private:
     float _gravity = 9.8f;
     float _vx;
     float _vy;
+    float _torqueForce = -999.0f;
     float _maxLifeTime = 0;
     float _lifeTime = 0;
     float _startScale = 0;
