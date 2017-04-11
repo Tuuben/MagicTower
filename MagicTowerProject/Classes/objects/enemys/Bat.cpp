@@ -43,7 +43,10 @@ bool Bat::init(){
 
 void Bat::update(float dt){
 
-    Node::update(dt);
+    if(isFrozen())
+        return;
+    
+    Actor::update(dt);
     
     moveTowardPlayer(dt);
     

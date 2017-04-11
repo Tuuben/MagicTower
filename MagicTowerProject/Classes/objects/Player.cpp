@@ -62,8 +62,8 @@ bool Player::init( cocos2d::Layer* onLayer )
 
 void Player::setupEvents()
 {
-    auto touchEventListener = EventListenerTouchOneByOne::create();
-    touchEventListener->onTouchBegan = CC_CALLBACK_2(Player::onTouchBegan, this);
+    auto touchEventListener = EventListenerTouchAllAtOnce::create();
+    touchEventListener->onTouchesBegan = CC_CALLBACK_2(Player::onTouchesBegan, this);
     
     auto collisionEventListener = EventListenerPhysicsContact::create();
     collisionEventListener->onContactBegin = CC_CALLBACK_1(Player::onContactBegin, this);
@@ -241,24 +241,28 @@ void Player::checkSideCollisions()
     Director::getInstance()->getRunningScene()->getPhysicsWorld()->queryRect(collideBottom, Rect( playerWorldPos.x, playerWorldPos.y - (PLAYER_CONTENT_SIZE.width / 2), 2, 2), nullptr);
 }
 
-bool Player::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
+bool Player::onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event *event)
 {
-    float touchXPos = touch->getLocation().x;
-    if(touchXPos >= _visibleSize.width / 2)
-    {
-        _direction = 1;
-    }
-    else
-    {
-        _direction = -1;
-    }
-    
-    jump();
-    
-    // If it is the initial jump
-    if(_isWaiting){
-        GameScene::getInstance()->setGameActive(true);
-        _isWaiting = false;
+    for(auto touch : touches){
+        
+        float touchXPos = touch->getLocation().x;
+        if(touchXPos >= _visibleSize.width / 2)
+        {
+            _direction = 1;
+        }
+        else
+        {
+            _direction = -1;
+        }
+        
+        jump();
+        
+        // If it is the initial jump
+        if(_isWaiting){
+            GameScene::getInstance()->setGameActive(true);
+            _isWaiting = false;
+        }
+        
     }
     
     return true;

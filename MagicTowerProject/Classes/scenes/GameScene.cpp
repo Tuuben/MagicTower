@@ -154,7 +154,7 @@ void GameScene::moveCamera(float dt){
         setCameraPositionY( MathUtil::lerp(getCameraPositionY(), cameraYPos, 4.0f * dt) );
     }
     
-    if(playerObj->getPositionY() - 16 > visibleSize.height * roomsIndex){
+    if(playerObj->getPositionY() - 10 > visibleSize.height * roomsIndex){
         
         cameraIsMoving = true;
         
@@ -168,7 +168,6 @@ void GameScene::moveCamera(float dt){
             playerObj->unfreeze();
             for( auto obj : mapH->getMovingObjects() ){
                 obj->unfreeze();
-                CCLOG("freezse");
             }
             
         });

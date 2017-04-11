@@ -37,7 +37,7 @@ private:
     void update(float dt) override;
     void jump();
     void checkSideCollisions();
-    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    bool onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event* event);
     bool onContactBegin(cocos2d::PhysicsContact& contact);
     void onContactSeparate( cocos2d::PhysicsContact& contact );
     void setupAnimations();

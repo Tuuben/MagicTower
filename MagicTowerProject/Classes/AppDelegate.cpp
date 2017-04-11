@@ -43,6 +43,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
         glview = GLViewImpl::createWithRect("MagicTowerProject", Rect(0, 0,
         designResolutionSize.width * 2 , designResolutionSize.height * 2));
+        
 #else
         glview = GLViewImpl::create("MagicTowerProject");
 #endif
@@ -81,7 +82,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // Set the design resolution
-    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_HEIGHT);
+    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
 
     // create a scene. it's an autorelease object
     auto scene = GameScene::createScene();
@@ -97,7 +98,7 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
     // if you use SimpleAudioEngine, it must be pause
-     CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
