@@ -520,7 +520,7 @@ void MapHandler::createExplosive(int xIndex, int yIndex){
     ExplosiveCrate* eCrate = ExplosiveCrate::create();
     eCrate->setPosition(Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH));
     this->addChild(eCrate);
-    _mapNodes.push_back(eCrate);
+    _movingObjects.push_back(eCrate);
     
 }
 

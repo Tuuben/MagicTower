@@ -35,10 +35,10 @@ bool ExplosiveCrate::init(){
 
 void ExplosiveCrate::update(float dt){
     
-    if(isDestroyed)
+    if(isDestroyed || isFrozen())
         return;
     
-    Node::update(dt);
+    Actor::update(dt);
 
     if(!isTriggered)
         checkForPlayer();

@@ -10,11 +10,11 @@
 #define ExplosiveCrate_hpp
 
 #include <stdio.h>
-#include "../../../cocos2d/cocos/cocos2d.h"
+#include "../../candypunk/objects/Actor.h"
 #include "../Player.h"
 
 USING_NS_CC;
-class ExplosiveCrate : public cocos2d::Node {
+class ExplosiveCrate : public Actor {
 #define MIN_TRIGGER_DISTANCE 30
 #define COUNTDOWN_VALUE 1.4f
 public:
