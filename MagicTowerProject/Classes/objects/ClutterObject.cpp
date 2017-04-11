@@ -27,11 +27,11 @@ bool ClutterObject::init(){
     }
     else if(rand == 2){
         sprt = Sprite::createWithSpriteFrameName(CANDLE_STICK_SPRITE_01);
-        sprtColor = Color3B(248,184,0);
+        sprtColor = Color3B(255,205,10);
     }
     else {
         sprt = Sprite::createWithSpriteFrameName(CRATE_SPRITE_01);
-        sprtColor = Color3B(252,160,68);
+        sprtColor = Color3B(226,82,25);
     }
     
     sprt->setColor(sprtColor);

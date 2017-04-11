@@ -40,7 +40,7 @@ class MapHandler : public cocos2d::Node
 #define SOLID_TILE_ID 1
     
 // MISC
-#define GRASS_SPAWN_CHANCE 50
+#define GRASS_SPAWN_CHANCE 35
 #define CLUTTER_OBJECT_SPAWN_CHANCE 35
 #define BANNER_SPAWN_CHANCE 20
     

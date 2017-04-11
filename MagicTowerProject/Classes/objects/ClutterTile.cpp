@@ -42,7 +42,7 @@ bool ClutterTile::init(ClutterType clutterType)
         
         this->setGlobalZOrder(-50);
         
-        Color3B primaryColor(216, 248, 120);
+        Color3B primaryColor(0, 255, 0);
         this->setColor( primaryColor );
         
     }

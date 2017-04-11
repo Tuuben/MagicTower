@@ -119,9 +119,9 @@
 #define BACKGROUND_TILE_04 "background_tile_01.png"
 
 /*==== < COLORS > ====*/
-#define FOOD_COLOR cocos2d::Color3B( 60, 188, 252 )
+#define FOOD_COLOR cocos2d::Color3B( 0, 200, 255 )
 #define COIN_COLOR cocos2d::Color3B( 0, 0, 0 )
-#define OBSTACLE_COLOR cocos2d::Color3B(228, 0, 88)
+#define OBSTACLE_COLOR cocos2d::Color3B(255, 0, 0)
 
 /*==== < AUDIO > ====*/
 #define SFX_HIT_01 "audio/hit_01.wav"
