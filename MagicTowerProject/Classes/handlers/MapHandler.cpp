@@ -357,6 +357,7 @@ int MapHandler::getTileIndex(int top, int bottom, int left, int right)
 
 void MapHandler::clearOld( float clearPositionY )
 {
+    
     if(_mapNodes.size() > 0)
     {
         for(int i = 0; i < _mapNodes.size(); i++)
@@ -371,6 +372,7 @@ void MapHandler::clearOld( float clearPositionY )
     
     for(int i = _mapNodes.size() - 1; i >= 0; i-- )
     {
+        
         if(dynamic_cast< Node* >(_mapNodes.at(i)) != nullptr)
         {
             if(_mapNodes.at(i)->getPositionY() < clearPositionY  )
@@ -379,7 +381,23 @@ void MapHandler::clearOld( float clearPositionY )
                 _mapNodes.erase( _mapNodes.begin() + i );
             }
         }
+        
     }
+    
+    for(int i = _movingObjects.size() - 1; i >= 0; i-- )
+    {
+        
+        if(dynamic_cast< Actor* >(_movingObjects.at(i)) != nullptr)
+        {
+            if(_movingObjects.at(i)->getPositionY() < clearPositionY  )
+            {
+                this->removeChild( _movingObjects.at(i) );
+                _movingObjects.erase( _movingObjects.begin() + i );
+            }
+        }
+        
+    }
+    
 }
 
 void MapHandler::createSolidTile(int xIndex, int yIndex, int tileIndex)
@@ -514,7 +532,7 @@ void MapHandler::createSwing(int xIndex, int yIndex){
     Swing* swing = Swing::create();
     swing->setPosition(Vec2( xIndex * TILE_WIDTH, yIndex * TILE_WIDTH ));
     this->addChild(swing, 10);
-    _mapNodes.push_back(swing);
+    _movingObjects.push_back(swing);
     _swingsSpawned++;
     
 }
@@ -528,7 +546,7 @@ void MapHandler::createBat(int xIndex, int yIndex){
     Bat* bat = Bat::create();
     bat->setPosition( Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH) );
     this->addChild(bat);
-    _mapNodes.push_back(bat);
+    _movingObjects.push_back(bat);
     _batsSpawned++;
     
 }

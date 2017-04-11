@@ -10,11 +10,11 @@
 #define Swing_hpp
 
 #include <stdio.h>
-#include "../../../cocos2d/cocos/cocos2d.h"
+#include "../../candypunk/objects/Actor.h"
 
 USING_NS_CC;
 
-class Swing : public cocos2d::Node {
+class Swing : public Actor {
 #define SPEED_MULTIPLIER 0.3f
 #define CHAIN_SPACING 16.0f
 public:

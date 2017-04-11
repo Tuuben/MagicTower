@@ -137,6 +137,7 @@ Player* GameScene::getPlayer(){
 
 void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
 {
+    
     if( keyCode == EventKeyboard::KeyCode::KEY_R)
     {
         auto scene = GameScene::createScene();
@@ -147,7 +148,6 @@ void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::E
 
 void GameScene::moveCamera(float dt){
 
-    
     setCameraPositionX( MathUtil::lerp(getCameraPositionX(), 0.0f, 4.0f * dt) );
     
     if(!cameraIsMoving){
@@ -164,11 +164,24 @@ void GameScene::moveCamera(float dt){
         auto move = MoveTo::create(1.0f, Vec2(0, -visibleSize.height * roomsIndex));
         auto onComplete = CallFunc::create([this](){
             this->cameraIsMoving = false;
+            
+            playerObj->unfreeze();
+            for( auto obj : mapH->getMovingObjects() ){
+                obj->unfreeze();
+                CCLOG("freezse");
+            }
+            
         });
         auto wait = DelayTime::create(ON_ROOM_CHANGE_DELAY);
         getObjectLayer()->runAction( Sequence::create(EaseSineInOut::create(move), wait, onComplete, NULL));
         
         cameraYPos = visibleSize.height * roomsIndex;
+        
+        // Freeze moving objects
+        playerObj->freeze();
+        for( auto obj : mapH->getMovingObjects() ){
+            obj->freeze();
+        }
         
         roomsIndex++;
         

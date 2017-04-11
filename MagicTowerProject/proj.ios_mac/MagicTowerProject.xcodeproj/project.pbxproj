@@ -56,6 +56,8 @@
 		9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9481C7B0B490018656C /* AnimationComponent.cpp */; };
 		9815C9521C7B0B600018656C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9501C7B0B600018656C /* World.cpp */; };
 		9815C9531C7B0B600018656C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9501C7B0B600018656C /* World.cpp */; };
+		98220EB91E9CE28600171ECF /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98220EB71E9CE28600171ECF /* Actor.cpp */; };
+		98220EBA1E9CE28600171ECF /* Actor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98220EB71E9CE28600171ECF /* Actor.cpp */; };
 		9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9823DE191E98CDA9003ACFE4 /* Swing.cpp */; };
 		9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9823DE191E98CDA9003ACFE4 /* Swing.cpp */; };
 		9825D8801C80495700FD4133 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9825D87E1C80495700FD4133 /* AudioManager.cpp */; };
@@ -189,6 +191,8 @@
 		9815C9491C7B0B490018656C /* AnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationComponent.h; sourceTree = "<group>"; };
 		9815C9501C7B0B600018656C /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
 		9815C9511C7B0B600018656C /* World.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = World.h; sourceTree = "<group>"; };
+		98220EB71E9CE28600171ECF /* Actor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Actor.cpp; sourceTree = "<group>"; };
+		98220EB81E9CE28600171ECF /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Actor.h; sourceTree = "<group>"; };
 		9823DE191E98CDA9003ACFE4 /* Swing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Swing.cpp; sourceTree = "<group>"; };
 		9823DE1A1E98CDA9003ACFE4 /* Swing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swing.h; sourceTree = "<group>"; };
 		9825D87E1C80495700FD4133 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
@@ -434,6 +438,7 @@
 		9815C9461C7B0B490018656C /* candypunk */ = {
 			isa = PBXGroup;
 			children = (
+				98220EB61E9CE28600171ECF /* objects */,
 				98840D7D1E96BC1A005E1132 /* utility */,
 				9815C9471C7B0B490018656C /* components */,
 				9815C9501C7B0B600018656C /* World.cpp */,
@@ -449,6 +454,15 @@
 				9815C9491C7B0B490018656C /* AnimationComponent.h */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		98220EB61E9CE28600171ECF /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				98220EB71E9CE28600171ECF /* Actor.cpp */,
+				98220EB81E9CE28600171ECF /* Actor.h */,
+			);
+			path = objects;
 			sourceTree = "<group>";
 		};
 		983CA8981E9BEFBF003E37E6 /* misc */ = {
@@ -703,6 +717,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				98DA83101C7C8458006700AD /* Food.cpp in Sources */,
 				987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
+				98220EB91E9CE28600171ECF /* Actor.cpp in Sources */,
 				F6502F641C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAC1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
 				983CA89B1E9BEFE9003E37E6 /* Background.cpp in Sources */,
@@ -713,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98220EBA1E9CE28600171ECF /* Actor.cpp in Sources */,
 				987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */,

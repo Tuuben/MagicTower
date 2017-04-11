@@ -42,10 +42,24 @@ bool Bat::init(){
 }
 
 void Bat::update(float dt){
-    
+
     Node::update(dt);
     
     moveTowardPlayer(dt);
+    
+}
+
+void Bat::freeze(){
+    
+    Actor::freeze();
+    animComp->stopAnimation();
+    
+}
+
+void Bat::unfreeze(){
+
+    Actor::unfreeze();
+    animComp->playAnimation("idle", 12, true, true);
     
 }
 
@@ -61,8 +75,6 @@ void Bat::moveTowardPlayer(float dt){
     // Get the distance to player
     Vec2 diff = Vec2( powf((curPos.x - playerPos.x), 2), powf(( curPos.y - playerPos.y), 2) );
     float distance = sqrtf(diff.x + diff.y);
-    
-//    CCLOG("%f", distance);
     
     // Get angle to player
     float angle = atan2( playerPos.y - curPos.y, playerPos.x - curPos.x);

@@ -44,7 +44,7 @@ public:
 
 private:
     static GameScene* _instance;
-    int roomsIndex = 0;
+    int roomsIndex = 1;
     bool cameraIsMoving = false;
     float cameraYPos = 0.0f;
     

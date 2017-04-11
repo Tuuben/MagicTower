@@ -70,6 +70,9 @@ void Swing::createChainNodes(int amt){
 
 void Swing::update(float dt){
 
+    if(isFrozen())
+        return;
+    
     for(int i = 0; i < chainNodes.size(); i++){
         
         angle += dt * SPEED_MULTIPLIER * direction;

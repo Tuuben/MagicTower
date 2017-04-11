@@ -76,7 +76,7 @@ void Player::setupEvents()
 float speedLineScale = 0;
 void Player::update(float dt)
 {
-    Node::update(dt);
+    Actor::update(dt);
     
     float vy = this->getPhysicsBody()->getVelocity().y;
     

@@ -14,6 +14,7 @@
 #include "../../cocos2d/cocos/cocos2d.h"
 #include "../objects/ClutterTile.h"
 #include "../objects/traps/Spike.h"
+#include "../candypunk/objects/Actor.h"
 
 class MapHandler : public cocos2d::Node
 {
@@ -75,6 +76,9 @@ public:
      * @return Map height
      */
     float getMapHeight();
+    
+    // Return the moving objects in the map
+    std::vector< Actor* > getMovingObjects() { return _movingObjects; };
     
 private:
     
@@ -145,7 +149,8 @@ private:
     int _swingsSpawned = 0;
     int _batsSpawned = 0;
     cocos2d::Size _visibleSize;
-    std::vector< cocos2d::Node* > _mapNodes;
+    std::vector< Node* > _mapNodes;
+    std::vector< Actor* > _movingObjects;
     std::vector< std::vector<int> > mapData;
 };
 

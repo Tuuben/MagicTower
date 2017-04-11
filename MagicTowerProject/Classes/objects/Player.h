@@ -10,14 +10,14 @@
 #define Player_h
 
 #include <stdio.h>
-#include "../../cocos2d/cocos/cocos2d.h"
 #include "../Globals.h"
 #include "SimpleParticle.h"
 #include "../candypunk/components/AnimationComponent.h"
+#include "../candypunk/objects/Actor.h"
 
 USING_NS_CC;
 
-class Player : public cocos2d::Node {
+class Player : public Actor {
 #define PLAYER_COLOR cocos2d::Color3B(255, 255, 255)
 #define PLAYER_CONTENT_SIZE cocos2d::Size(10, 10)
 #define JUMP_FORCE 80
@@ -34,7 +34,7 @@ public:
     
 private:
     void setupEvents();
-    void update(float dt);
+    void update(float dt) override;
     void jump();
     void checkSideCollisions();
     bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
