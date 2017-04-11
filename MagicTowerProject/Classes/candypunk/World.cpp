@@ -55,19 +55,19 @@ void World::addUIElement(cocos2d::Node *node, int zLayer)
 
 void World::setCameraPosition(cocos2d::Vec2 position)
 {
-    _objectLayer->setPosition( Vec2( -position.x , -position.y ) );
+    _objectLayer->setPosition( Vec2( position.x * -1 , position.y * -1 ) );
 }
 
 void World::setCameraPositionX(float x)
 {
     x = roundf(x);
-    _objectLayer->setPositionX( -x );
+    _objectLayer->setPositionX( x * -1 );
 }
 
 void World::setCameraPositionY(float y)
 {
     y = roundf(y);
-    _objectLayer->setPositionY(-y);
+    _objectLayer->setPositionY( y * -1 );
 }
 
 Vec2 World::getCameraPosition()

@@ -13,7 +13,7 @@ USING_NS_CC;
 class GameScene : public World
 {
 #define MIN_CAMERA_POS 10
-#define CAMERA_SPEED 60
+#define ON_ROOM_CHANGE_DELAY 0.3f
 public:
     static GameScene* getInstance();
     
@@ -26,11 +26,13 @@ public:
     void update(float dt);
     void flashColor( cocos2d::Color3B color );
     void createBackground();
+    void setGameActive(bool active){ gameActive = active; };
     
     Player* getPlayer();
     
 private:
     void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void moveCamera(float dt);
     
 public:
     MapHandler* mapH;
@@ -38,11 +40,14 @@ public:
     FlashLayer* flashLayer;
     cocos2d::Vec2 lastPlayerPos;
     cocos2d::Size visibleSize;
+    bool gameActive = false;
 
 private:
     static GameScene* _instance;
-    float minCameraYPosition = -100.0f;
-    float lastPlayerPosY = -100.0f;
+    int roomsIndex = 0;
+    bool cameraIsMoving = false;
+    float cameraYPos = 0.0f;
+    
 };
 
 #endif // __GAMESCENE_SCENE_H__

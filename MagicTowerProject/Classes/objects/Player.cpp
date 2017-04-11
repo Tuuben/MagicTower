@@ -255,6 +255,12 @@ bool Player::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
     
     jump();
     
+    // If it is the initial jump
+    if(_isWaiting){
+        GameScene::getInstance()->setGameActive(true);
+        _isWaiting = false;
+    }
+    
     return true;
 }
 

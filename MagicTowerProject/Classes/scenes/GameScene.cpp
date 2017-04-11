@@ -57,14 +57,15 @@ bool GameScene::init()
     
     visibleSize = Director::getInstance()->getVisibleSize();
     
+    playerObj = Player::create( getObjectLayer() );
+    playerObj->setPosition(Vec2( visibleSize.width / 2, (visibleSize.height / 2) * 0.1f ));
+    addObject(playerObj);
+    
     mapH = MapHandler::create();
     float mapOffsetX = visibleSize.width - mapH->getMapWidth();
     mapH->setPositionX( mapOffsetX / 2 );
+    mapH->updateMap( -10.0f );
     addObject(mapH);
-    
-    playerObj = Player::create( getObjectLayer() );
-    playerObj->setPosition(Vec2( visibleSize.width / 2, (visibleSize.height / 2) * 0.14f ));
-    addObject(playerObj);
     
     flashLayer = FlashLayer::create(FOOD_COLOR);
     flashLayer->setGlobalZOrder(100);
@@ -84,7 +85,7 @@ bool GameScene::init()
     keyBoardEventListener->onKeyPressed = CC_CALLBACK_2( GameScene::onKeyPressed, this);
     
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyBoardEventListener, this);
-
+    
     return true;
 }
 
@@ -92,24 +93,15 @@ void GameScene::update(float dt)
 {
     
     World::update(dt);
-    
-    float targetPos = (getCameraPositionY() > minCameraYPosition) ? playerObj->getPositionY() - 100 : minCameraYPosition;
-    setCameraPosition( Utils::lerp(getCameraPosition(), Vec2( 0, targetPos ), 3.0f * dt) );
-    
-    
-    if(playerObj->getPositionY() > lastPlayerPosY){
-        
-        lastPlayerPosY = playerObj->getPositionY();
-        minCameraYPosition = lastPlayerPosY - 220;
-        
-    }
+
+    moveCamera(dt);
     
     //check if should update map
-    if( (getCameraPositionY() + visibleSize.height) >= mapH->getMapHeight() - 150)
+  /*  if( (getCameraPositionY() + visibleSize.height) >= mapH->getMapHeight() - 150)
     {
         float clearBelowPosY = getCameraPositionY(); //playerObj->getPositionY() - (visibleSize.height / 2);
         mapH->updateMap( clearBelowPosY );
-    }
+    }*/
 
 }
 
@@ -149,6 +141,37 @@ void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::E
     {
         auto scene = GameScene::createScene();
         Director::getInstance()->replaceScene(scene);
+    }
+    
+}
+
+void GameScene::moveCamera(float dt){
+
+    
+    setCameraPositionX( MathUtil::lerp(getCameraPositionX(), 0.0f, 4.0f * dt) );
+    
+    if(!cameraIsMoving){
+        setCameraPositionY( MathUtil::lerp(getCameraPositionY(), cameraYPos, 4.0f * dt) );
+    }
+    
+    if(playerObj->getPositionY() - 16 > visibleSize.height * roomsIndex){
+        
+        cameraIsMoving = true;
+        
+        float clearBelowY = visibleSize.height * (roomsIndex - 1);
+        mapH->updateMap( clearBelowY );
+        
+        auto move = MoveTo::create(1.0f, Vec2(0, -visibleSize.height * roomsIndex));
+        auto onComplete = CallFunc::create([this](){
+            this->cameraIsMoving = false;
+        });
+        auto wait = DelayTime::create(ON_ROOM_CHANGE_DELAY);
+        getObjectLayer()->runAction( Sequence::create(EaseSineInOut::create(move), wait, onComplete, NULL));
+        
+        cameraYPos = visibleSize.height * roomsIndex;
+        
+        roomsIndex++;
+        
     }
     
 }

@@ -60,6 +60,7 @@ private:
     bool _touchingRight = false;
     bool _touchBottom = false;
     bool _touchTop = false;
+    bool _isWaiting = true;
     
     cocos2d::DrawNode* _drawNode;
     float _angle = 0;

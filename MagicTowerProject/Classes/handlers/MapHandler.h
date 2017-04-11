@@ -18,18 +18,20 @@
 class MapHandler : public cocos2d::Node
 {
 #define TILE_WIDTH 16
-#define LEVEL_BLOCK_HEIGHT 20
+#define LEVEL_DEAD_ZONE_BOTTOM 8
+#define LEVEL_DEAD_ZONE_TOP 4
+#define LEVEL_BLOCK_HEIGHT 30
 #define LEVEL_BLOCK_WIDTH 16
 #define BASE_FLOOR_HEIGHT 1
 #define SOLID_TILE_COLOR cocos2d::Color3B(255, 255, 255)
-#define SOLID_SPAWN_CHANCE 80 //50
+#define SOLID_SPAWN_CHANCE 60 //50
 #define COIN_SPAWN_CHANCE 0.2f
 #define FOOD_SPAWN_CHANCE 1.5f
 #define SWING_TRAP_SPAWN_CHANCE 4
 #define SPIKE_SPAWN_CHANCE 10
 #define EXPLOSIVE_SPAWN_CHANCE 2
 #define BAT_SPAWN_CHANCE 0.25f
-#define MAX_TILE_SPAWNS 38
+#define MAX_TILE_SPAWNS 240//38
 #define MAX_SWING_SPAWNS 2
 #define MAX_BAT_SPAWNS 4
     
@@ -51,7 +53,9 @@ class MapHandler : public cocos2d::Node
 * use updateMap() function to update your map. it will also remove old tiles that are off screen.
 */
 public:
+    
     static MapHandler* create();
+    
     bool init();
     
     /**
@@ -91,7 +95,12 @@ private:
      * Every room block has a 2 tile wide gap
      * @param cleanIterations Specifies how many times it should iterate through the map data and remove loose solid's
      */
-    void createLevelContentData(int cleanIterations = 1);
+    void createLevelContentData();
+    
+    /**
+     * @brief Cleans the path for the player
+     */
+    void clearPathInContentData();
     
     /**
      * @brief Takes the map data and creates tiles and other map objects.

@@ -88,11 +88,13 @@ void ClutterObject::breakObject(){
         float vx = 240.0f * CCRANDOM_0_1() - 120.0f;
         float vy = 120.0f * CCRANDOM_0_1() + 40.0f;
         float lifeTime = 0.2f * CCRANDOM_0_1() + 0.2f;
-        auto part = SimpleParticle::create(strNames[(int)(3 * CCRANDOM_0_1())] , vx, vy, lifeTime, 1.0f, 1.0f);
+        float size = 2.0f * CCRANDOM_0_1() + 1.0f;
+        //strNames[(int)(3 * CCRANDOM_0_1())]
+        auto part = SimpleParticle::create( PARTICLE_SQUARE_01, vx, vy, lifeTime, size, 0.0f);
         part->setPosition(getPosition());
         part->setColor(sprtColor);
         part->setGlobalZOrder(50);
-        part->setRotation(360.0f * CCRANDOM_0_1());
+//        part->setRotation(360.0f * CCRANDOM_0_1());
         this->getParent()->addChild(part);
         
     }

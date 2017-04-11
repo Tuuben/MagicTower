@@ -52,33 +52,27 @@ void MapHandler::updateMap( float clearPositionY )
     _swingsSpawned = 0;
     _batsSpawned = 0;
     
-    /* === < REMOVE OLD > ===
-    1. remove old tiles and walls
-    */
+    // Update block height
+    _baseYIndex += LEVEL_BLOCK_HEIGHT;
+    
+    // Removes old tiles below the specified position
     clearOld(clearPositionY);
     
-    /* === < BLOCK OUTLINE > ===
-     1. creates the walls at screen border
-     */
+    // Creates the block outline
     createLevelBlockOutline();
     
-     /* === < LEVEL DATA > ===
-     1. randomizes map data 
-     2. cleans lose tiles the number of times specified
-     */
-    int cleanupItr = 0;
-    createLevelContentData( cleanupItr );
+    // Randomizes and creates a path for the player
+    createLevelContentData();
     
-     /* === < LEVEL OBJECTS > ===
-     1. uses map data and creates tiles
-     2. creates other game objects
-     */
+    // Clears the path for the player
+    clearPathInContentData();
+    
+    // Creates level objects
     createLevelContentObjects();
     
-    /* === < LARGE LEVEL OBJECTS > ===
-     1. uses map data and creates large objects
-     */
+    // Creates large level objects
     createLargeLevelContentObjects();
+    
 }
 
 float MapHandler::getMapWidth()
@@ -101,6 +95,7 @@ void MapHandler::createLevelBaseFloor()
 
 void MapHandler::createLevelBlockOutline()
 {
+    
     for(int i = _baseYIndex; i < _baseYIndex + LEVEL_BLOCK_HEIGHT; i++)
     {
         createSolidTile(-1, i, 15);
@@ -111,11 +106,10 @@ void MapHandler::createLevelBlockOutline()
         createSolidTile( LEVEL_BLOCK_WIDTH + 2, i, 15);
         
     }
-    _baseYIndex += LEVEL_BLOCK_HEIGHT;
     
 }
 
-void MapHandler::createLevelContentData(int cleanIterations )
+void MapHandler::createLevelContentData()
 {
     //handle map data
     if( mapData.size() > 0 ) {
@@ -130,95 +124,57 @@ void MapHandler::createLevelContentData(int cleanIterations )
     }
 
     //data iteration
-    int gap01 = (LEVEL_BLOCK_WIDTH - 2) * CCRANDOM_0_1() + 2;
-    int gap02 = gap01 + 1;
     int numObjectsSpawned = 0;
-    for(int y = 2; y < LEVEL_BLOCK_HEIGHT; y++)
+    for(int y = LEVEL_DEAD_ZONE_BOTTOM; y < LEVEL_BLOCK_HEIGHT - LEVEL_DEAD_ZONE_TOP; y++)
     {
-        //chance to change the gap
-        if( y == LEVEL_BLOCK_HEIGHT / 2 )
-        {
-            /*float gapChangeChance = 100 * CCRANDOM_0_1();
-            if(gapChangeChance < 50)
-            {
-                int gap01 = (LEVEL_BLOCK_WIDTH - 2) * CCRANDOM_0_1() + 1;
-                int gap02 = gap01 + 1;
-            }*/
-        }
-        
-        //for(int x = 1; x < LEVEL_BLOCK_WIDTH; x++)
-       // {
-            int sourceX = (int)(CCRANDOM_0_1() * LEVEL_BLOCK_WIDTH - 2) + 2;
-            float rand = 100 * CCRANDOM_0_1();
-            
-            if(rand < SOLID_SPAWN_CHANCE && numObjectsSpawned < MAX_TILE_SPAWNS)
-            {
-                mapData[sourceX][y] = SOLID_TILE_ID;
-                numObjectsSpawned++;
-            
-                int clusterWidth = (5 * CCRANDOM_0_1() + 2);
-                int clusterHeight = 4 * CCRANDOM_0_1() + 1;
-                
-                for(int cX = sourceX - (clusterWidth / 2); cX < sourceX + (clusterWidth / 2); cX++)
-                {
-                    
-                    for( int cY = y; cY < y + clusterHeight; cY++ ){
-                        
-                        int spawnX = clampf(cX, 0, LEVEL_BLOCK_WIDTH - 2);
-                        int spawnY = clampf(cY, 0, LEVEL_BLOCK_HEIGHT - 1);//clampf(y + cY, 0, LEVEL_BLOCK_HEIGHT - 1);
-                    
-                        if(cX != gap01 || cX != gap02){
-                            mapData[spawnX][spawnY] = 1;
-                            numObjectsSpawned++;
-                        }
-                        else{
-                            mapData[spawnX][spawnY] = 0;
-                        }
-                        
-                    }
-                    
-                }
-            }
-        
-    }
-    
-    //clean lose tiles
-    for(int i = 0; i < cleanIterations; i++)
-    {
-        for(int y = 0; y < LEVEL_BLOCK_HEIGHT; y++ )
-        {
-            for(int x = 0; x < LEVEL_BLOCK_WIDTH; x++)
-            {
-                int top = ( y == LEVEL_BLOCK_HEIGHT - 1 ) ? 0 : y + 1;
-                int bottom = ( y == 0 ) ? 0 : y - 1;
-                int right = (x == LEVEL_BLOCK_WIDTH - 1) ? 0 : x + 1;
-                int left = (x == 0) ? 0 : x - 1;
-                
-                int tileValue = 0;
-                
-                tileValue += mapData[x][top];
-                tileValue += mapData[x][bottom];
-                tileValue += mapData[left][y];
-                tileValue += mapData[right][y];
 
-                //clean tiles
-                if(tileValue == 0) {
-                    mapData[x][y] = EMPTY_TILE_ID;
+        int sourceX = (int)(CCRANDOM_0_1() * LEVEL_BLOCK_WIDTH - 2) + 2;
+        float rand = 100 * CCRANDOM_0_1();
+            
+        if(rand < SOLID_SPAWN_CHANCE && numObjectsSpawned < MAX_TILE_SPAWNS)
+        {
+            mapData[sourceX][y] = SOLID_TILE_ID;
+            numObjectsSpawned++;
+            
+            int clusterWidth = (6 * CCRANDOM_0_1() + 2);
+            int clusterHeight = (3 * CCRANDOM_0_1() + 1);
+                
+            for(int cX = sourceX - (clusterWidth / 2); cX < sourceX + (clusterWidth / 2); cX++)
+            {
+                    
+                for( int cY = y; cY < y + clusterHeight; cY++ ){
+                        
+                    int spawnX = clampf(cX, 0, LEVEL_BLOCK_WIDTH - 2);
+                    int spawnY = clampf(cY, 0, LEVEL_BLOCK_HEIGHT - 1);
+                
+                    mapData[spawnX][spawnY] = 1;
+                    numObjectsSpawned++;
+                        
                 }
-                if(tileValue >= 3) {
-                    mapData[x][y] = SOLID_TILE_ID;
-                }
-                else if(tileValue < 3 && tileValue > 0)
-                {
-                    if( (100 * CCRANDOM_0_1()) < 10)
-                    {
-                        mapData[x][y] = EMPTY_TILE_ID;
-                    }
-                }
+                    
             }
         }
+        
     }
     
+}
+
+void MapHandler::clearPathInContentData(){
+
+    int gaps[2];
+    gaps[0] = ((LEVEL_BLOCK_WIDTH - 4) * CCRANDOM_0_1()) + 4;
+    gaps[1] = gaps[0] + 1;
+    
+    for(int y = 0; y < LEVEL_BLOCK_HEIGHT; y++){
+        for(int x = 0; x < LEVEL_BLOCK_WIDTH; x++){
+        
+            if(x == gaps[0] || x == gaps[1] ){
+                mapData[x][y] = 0;
+            }
+            
+        }
+    }
+
 }
 
 void MapHandler::createLevelContentObjects()
@@ -244,7 +200,10 @@ void MapHandler::createLevelContentObjects()
                 }
                 
                 // create swing traps
-                if( (tileIndex < 15) && ((100 * CCRANDOM_0_1()) < SWING_TRAP_SPAWN_CHANCE) && (x > 4) && (x < LEVEL_BLOCK_WIDTH - 4) ){
+                if( (tileIndex < 15) &&
+                    ((100 * CCRANDOM_0_1()) < SWING_TRAP_SPAWN_CHANCE) &&
+                    (x > 4) && (x < LEVEL_BLOCK_WIDTH - 4) &&
+                    (y > LEVEL_DEAD_ZONE_BOTTOM) ){
                 
                     createSwing(x, y + _baseYIndex);
                     
@@ -288,8 +247,10 @@ void MapHandler::createLevelContentObjects()
                         }
                     }
                     else if((100 * CCRANDOM_0_1()) < EXPLOSIVE_SPAWN_CHANCE){
+                        
                         createExplosive(x, y + _baseYIndex);
                         spotFilled++;
+                        
                     }
                 }
                 
@@ -330,7 +291,7 @@ void MapHandler::createLevelContentObjects()
                         createFood(x, y + _baseYIndex);
                     }
                     
-                    if( (100 * CCRANDOM_0_1()) < BAT_SPAWN_CHANCE) {
+                    if( (100 * CCRANDOM_0_1()) < BAT_SPAWN_CHANCE && y > LEVEL_DEAD_ZONE_BOTTOM) {
                         createBat(x, y + _baseYIndex);
                     }
                 }
