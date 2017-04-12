@@ -22,6 +22,7 @@ class Player : public Actor {
 #define PLAYER_CONTENT_SIZE cocos2d::Size(10, 10)
 #define JUMP_FORCE 80
 #define HORIZONTAL_SPEED 40
+#define IMMORTAL_DURATION 2.0f
 #define IDLE_ANIMATION_NAME "idle_anim"
 #define FLY_ANIMATION_NAME "fly_anim"
 #define FALL_ANIMATION_NAME "fall_anim"
@@ -31,11 +32,13 @@ class Player : public Actor {
 public:
     static Player* create( cocos2d::Layer* onLayer );
     bool init(cocos2d::Layer* onLayer);
+    void removeHealth();
     
 private:
     void setupEvents();
     void update(float dt) override;
     void jump();
+    void immortalCountdown(float dt);
     void checkSideCollisions();
     bool onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event* event);
     bool onContactBegin(cocos2d::PhysicsContact& contact);
@@ -54,8 +57,11 @@ private:
     cocos2d::Layer* _onLayer;
     AnimationComponent* _animComponent;
     
+    int _lives = 3;
     int _direction = 1;
+    float _immortalDuration = 0.0f;
     int _collisionCount = 0;
+    bool _immortal = true;
     bool _touchingLeft = false;
     bool _touchingRight = false;
     bool _touchBottom = false;

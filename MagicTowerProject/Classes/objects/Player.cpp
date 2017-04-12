@@ -60,6 +60,21 @@ bool Player::init( cocos2d::Layer* onLayer )
     return true;
 }
 
+void Player::removeHealth(){
+
+    _lives--;
+    _immortalDuration = IMMORTAL_DURATION;
+    _immortal = true;
+    
+    // Effect
+    auto fadeTo = FadeTo::create(0.0f, 0);
+    auto wait = DelayTime::create(IMMORTAL_DURATION / 30);
+    auto fadeFrom = FadeTo::create(0.0f, 255);
+    auto seq = Sequence::create(fadeTo, wait, fadeFrom, wait, NULL);
+    _sprite->runAction(Repeat::create(seq, 15));
+    
+}
+
 void Player::setupEvents()
 {
     auto touchEventListener = EventListenerTouchAllAtOnce::create();
@@ -79,14 +94,14 @@ void Player::update(float dt)
     Actor::update(dt);
     
     float vy = this->getPhysicsBody()->getVelocity().y;
-    
-    if(vy <= -0.1f)
-    {
+    if(vy <= -0.1f) {
         _touchBottom = false;
     }
     
     checkSideCollisions();
 
+    if(_immortal)
+        immortalCountdown(dt);
     
 }
 
@@ -109,19 +124,17 @@ void Player::jump()
     _touchBottom = false;
     _touchTop = false;
     
-    // Particles
-//    for(int i = 0; i < 2; i++){
-//        
-//        float vx = 60 * CCRANDOM_0_1() - 30.0f;
-//        float vy = 50 * CCRANDOM_0_1();
-//        float startScale = 0.6f * CCRANDOM_0_1() + 0.6f;
-//        float endScale = 0;
-//        float lifeTime = 0.2f * CCRANDOM_0_1() + 0.1f;
-//        SimpleParticle* particle = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifeTime, startScale, endScale);
-//        particle->setPosition(getPosition());
-//        _onLayer->addChild(particle, -50);
-//        
-//    }
+}
+
+void Player::immortalCountdown(float dt){
+
+    _immortalDuration -= dt;
+    CCLOG("Immortal %f", _immortalDuration);
+    // Reset
+    if(_immortalDuration <= 0.0f){
+        _immortal = false;
+        _immortalDuration = 0.0f;
+    }
     
 }
 
@@ -282,6 +295,17 @@ bool Player::onContactBegin(cocos2d::PhysicsContact &contact)
             AudioManager::getInstance()->playSoundEffect(SFX_HIT_02, 1.0f, pitch);
             _sprite->setRotation(0);
         }
+        
+        _collisionCount++;
+    }
+    
+    if( (shapeA->getCollisionBitmask() == PLAYER_BITMASK && shapeB->getCollisionBitmask() == OBSTACLE_BITMASK) ||
+        (shapeB->getCollisionBitmask() == PLAYER_BITMASK && shapeA->getCollisionBitmask() == OBSTACLE_BITMASK) )
+    {
+        
+            if(!_immortal)
+                removeHealth();
+        
         
         _collisionCount++;
     }
