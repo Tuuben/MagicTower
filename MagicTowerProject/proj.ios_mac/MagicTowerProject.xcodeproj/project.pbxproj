@@ -107,6 +107,10 @@
 		F6502F651C81E28100920211 /* Spike.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6502F621C81E28100920211 /* Spike.cpp */; };
 		F675F6861C710C8900CC04E3 /* SimpleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F675F6841C710C8900CC04E3 /* SimpleParticle.cpp */; };
 		F675F6871C710C8900CC04E3 /* SimpleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F675F6841C710C8900CC04E3 /* SimpleParticle.cpp */; };
+		F67D08E51EA0177E00380582 /* GraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E31EA0177E00380582 /* GraveStone.cpp */; };
+		F67D08E61EA0177E00380582 /* GraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E31EA0177E00380582 /* GraveStone.cpp */; };
+		F67D08E91EA01D2C00380582 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E71EA01D2C00380582 /* Soul.cpp */; };
+		F67D08EA1EA01D2C00380582 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E71EA01D2C00380582 /* Soul.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,6 +244,10 @@
 		F6502F631C81E28100920211 /* Spike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spike.h; sourceTree = "<group>"; };
 		F675F6841C710C8900CC04E3 /* SimpleParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleParticle.cpp; sourceTree = "<group>"; };
 		F675F6851C710C8900CC04E3 /* SimpleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleParticle.h; sourceTree = "<group>"; };
+		F67D08E31EA0177E00380582 /* GraveStone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraveStone.cpp; sourceTree = "<group>"; };
+		F67D08E41EA0177E00380582 /* GraveStone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraveStone.h; sourceTree = "<group>"; };
+		F67D08E71EA01D2C00380582 /* Soul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Soul.cpp; sourceTree = "<group>"; };
+		F67D08E81EA01D2C00380582 /* Soul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soul.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +530,10 @@
 				F6502F5D1C81CE3300920211 /* Pickup.h */,
 				983CA8931E9BD686003E37E6 /* ClutterObject.cpp */,
 				983CA8941E9BD686003E37E6 /* ClutterObject.h */,
+				F67D08E31EA0177E00380582 /* GraveStone.cpp */,
+				F67D08E41EA0177E00380582 /* GraveStone.h */,
+				F67D08E71EA01D2C00380582 /* Soul.cpp */,
+				F67D08E81EA01D2C00380582 /* Soul.h */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -713,10 +725,12 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9825D8871C80889100FD4133 /* Coin.cpp in Sources */,
+				F67D08E91EA01D2C00380582 /* Soul.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				98DA83101C7C8458006700AD /* Food.cpp in Sources */,
 				987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
+				F67D08E51EA0177E00380582 /* GraveStone.cpp in Sources */,
 				98220EB91E9CE28600171ECF /* Actor.cpp in Sources */,
 				F6502F641C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAC1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
@@ -731,6 +745,7 @@
 				98220EBA1E9CE28600171ECF /* Actor.cpp in Sources */,
 				987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				F67D08EA1EA01D2C00380582 /* Soul.cpp in Sources */,
 				9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				F6502F651C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
@@ -749,6 +764,7 @@
 				98DA83111C7C8458006700AD /* Food.cpp in Sources */,
 				F6502F5F1C81CE3300920211 /* Pickup.cpp in Sources */,
 				98AFABFF1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
+				F67D08E61EA0177E00380582 /* GraveStone.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

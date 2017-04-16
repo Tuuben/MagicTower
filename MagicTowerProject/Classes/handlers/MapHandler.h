@@ -32,6 +32,7 @@ class MapHandler : public cocos2d::Node
 #define SPIKE_SPAWN_CHANCE 10
 #define EXPLOSIVE_SPAWN_CHANCE 2
 #define BAT_SPAWN_CHANCE 0.25f
+#define GRAVE_SPAWN_CHANCE 2.0f
 #define MAX_TILE_SPAWNS 240//38
 #define MAX_SWING_SPAWNS 2
 #define MAX_BAT_SPAWNS 4
@@ -136,6 +137,7 @@ private:
     void createExplosive(int xIndex, int yIndex);
     void createSwing(int xIndex, int yIndex);
     void createBat(int xIndex, int yIndex);
+    void createGraveStone(int xIndex, int yIndex);
     void createFood(int xIndex, int yIndex);
     void createCoin(int xIndex, int yIndex);
     

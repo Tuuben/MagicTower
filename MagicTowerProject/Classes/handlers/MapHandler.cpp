@@ -14,6 +14,7 @@
 #include "../objects/enemys/Bat.h"
 #include "../objects/traps/ExplosiveCrate.h"
 #include "../objects/ClutterObject.h"
+#include "../objects/GraveStone.h"
 
 using namespace cocos2d;
 
@@ -254,19 +255,25 @@ void MapHandler::createLevelContentObjects()
                     }
                 }
                 
-                // Create clutter
                 if( (tileIndex == 4 || tileIndex == 5 || tileIndex == 6 || tileIndex == 12) && spotFilled < 1)
                 {
+                    // Create clutter grass
                     if( (100 * CCRANDOM_0_1()) < GRASS_SPAWN_CHANCE)
                     {
                         
                         createClutterTile(x, y + _baseYIndex, ClutterType::GRASS );
                         
                     }
+                    // Create clutter objects
                     else if( (100 * CCRANDOM_0_1() < CLUTTER_OBJECT_SPAWN_CHANCE)){
                     
                         createClutterObject(x, y + _baseYIndex);
                         
+                    }
+                    
+                    // Create grave stones
+                    if( (100 * CCRANDOM_0_1()) < GRAVE_SPAWN_CHANCE){
+                        createGraveStone(x, y + _baseYIndex);
                     }
                 }
                 
@@ -548,6 +555,15 @@ void MapHandler::createBat(int xIndex, int yIndex){
     this->addChild(bat);
     _movingObjects.push_back(bat);
     _batsSpawned++;
+    
+}
+
+void MapHandler::createGraveStone(int xIndex, int yIndex){
+    
+    GraveStone* grvs = GraveStone::create();
+    grvs->setPosition( Vec2(xIndex * TILE_WIDTH, yIndex * TILE_WIDTH) );
+    this->addChild(grvs);
+    _mapNodes.push_back(grvs);
     
 }
 
