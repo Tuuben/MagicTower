@@ -15,6 +15,7 @@
 #include "../candypunk/components/AnimationComponent.h"
 #include "../candypunk/objects/Actor.h"
 
+
 USING_NS_CC;
 
 class Player : public Actor {
@@ -33,6 +34,9 @@ public:
     static Player* create( cocos2d::Layer* onLayer );
     bool init(cocos2d::Layer* onLayer);
     void removeHealth();
+    void addSoul(Node* soul);
+    void freeze() override;
+    void unfreeze() override;
     
 private:
     void setupEvents();
@@ -70,9 +74,10 @@ private:
     
     cocos2d::DrawNode* _drawNode;
     float _angle = 0;
-    
+    std::vector<Node*> _soulList;
     std::vector<std::string> _idleAnimationFrames;
     std::vector<std::string> _dustParticleFrames;
+    
 };
 
 #endif /* Player_hpp */

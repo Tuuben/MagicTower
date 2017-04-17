@@ -10,6 +10,7 @@
 #include "../scenes/GameScene.h"
 #include "../handlers/AudioManager.h"
 #include "../candypunk/utility/Utils.h"
+#include "Soul.h"
 
 Player* Player::create( cocos2d::Layer* onLayer )
 {
@@ -73,7 +74,46 @@ void Player::removeHealth(){
     auto seq = Sequence::create(fadeTo, wait, fadeFrom, wait, NULL);
     _sprite->runAction(Repeat::create(seq, 15));
     
+    freeze();
+    getPhysicsBody()->setEnabled(false);
+    
+    auto soul = _soulList.at(0);
+    this->setPosition(soul->getPosition());
+    
+    auto cBack = CallFunc::create([this](){
+        this->unfreeze();
+        getPhysicsBody()->setEnabled(true);
+    });
+    runAction(Sequence::create(DelayTime::create(0.5f), cBack, NULL));
+    
 }
+
+void Player::addSoul(Node* soul){
+    _soulList.push_back(soul);
+}
+
+void Player::freeze(){
+    
+    Actor::freeze();
+    for(auto sNode : _soulList){
+        auto soul = dynamic_cast<Soul*>(sNode);
+        soul->freeze();
+    }
+
+}
+
+void Player::unfreeze(){
+    
+    Actor::unfreeze();
+    for(auto sNode : _soulList){
+    
+        auto soul = dynamic_cast<Soul*>(sNode);
+        soul->unfreeze();
+        
+    }
+    
+}
+
 
 void Player::setupEvents()
 {
@@ -91,6 +131,9 @@ void Player::setupEvents()
 float speedLineScale = 0;
 void Player::update(float dt)
 {
+    if(isFrozen())
+        return;
+    
     Actor::update(dt);
     
     float vy = this->getPhysicsBody()->getVelocity().y;

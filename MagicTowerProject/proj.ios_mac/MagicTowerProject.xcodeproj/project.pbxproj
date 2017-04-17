@@ -97,6 +97,8 @@
 		F6200EA21C6F1C6F00102152 /* textures in Resources */ = {isa = PBXBuildFile; fileRef = F6200EA01C6F1C6F00102152 /* textures */; };
 		F6200EAC1C6F1F1B00102152 /* MapHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6200EAA1C6F1F1B00102152 /* MapHandler.cpp */; };
 		F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6200EAA1C6F1F1B00102152 /* MapHandler.cpp */; };
+		F62015901EA4A8D600350031 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F620158E1EA4A8D600350031 /* Soul.cpp */; };
+		F62015911EA4A8D600350031 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F620158E1EA4A8D600350031 /* Soul.cpp */; };
 		F6235F2F1C6F30AF00D9DDC6 /* level01.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6235F2E1C6F30AF00D9DDC6 /* level01.txt */; };
 		F6235F301C6F30AF00D9DDC6 /* level01.txt in Resources */ = {isa = PBXBuildFile; fileRef = F6235F2E1C6F30AF00D9DDC6 /* level01.txt */; };
 		F6235F331C6F38FB00D9DDC6 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6235F311C6F38FB00D9DDC6 /* Player.cpp */; };
@@ -109,8 +111,6 @@
 		F675F6871C710C8900CC04E3 /* SimpleParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F675F6841C710C8900CC04E3 /* SimpleParticle.cpp */; };
 		F67D08E51EA0177E00380582 /* GraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E31EA0177E00380582 /* GraveStone.cpp */; };
 		F67D08E61EA0177E00380582 /* GraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E31EA0177E00380582 /* GraveStone.cpp */; };
-		F67D08E91EA01D2C00380582 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E71EA01D2C00380582 /* Soul.cpp */; };
-		F67D08EA1EA01D2C00380582 /* Soul.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F67D08E71EA01D2C00380582 /* Soul.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,6 +235,8 @@
 		F6200EA41C6F1CF700102152 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		F6200EAA1C6F1F1B00102152 /* MapHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapHandler.cpp; sourceTree = "<group>"; };
 		F6200EAB1C6F1F1B00102152 /* MapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapHandler.h; sourceTree = "<group>"; };
+		F620158E1EA4A8D600350031 /* Soul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Soul.cpp; sourceTree = "<group>"; };
+		F620158F1EA4A8D600350031 /* Soul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soul.h; sourceTree = "<group>"; };
 		F6235F2E1C6F30AF00D9DDC6 /* level01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level01.txt; sourceTree = "<group>"; };
 		F6235F311C6F38FB00D9DDC6 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		F6235F321C6F38FB00D9DDC6 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -246,8 +248,6 @@
 		F675F6851C710C8900CC04E3 /* SimpleParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleParticle.h; sourceTree = "<group>"; };
 		F67D08E31EA0177E00380582 /* GraveStone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GraveStone.cpp; sourceTree = "<group>"; };
 		F67D08E41EA0177E00380582 /* GraveStone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraveStone.h; sourceTree = "<group>"; };
-		F67D08E71EA01D2C00380582 /* Soul.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Soul.cpp; sourceTree = "<group>"; };
-		F67D08E81EA01D2C00380582 /* Soul.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soul.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -532,8 +532,8 @@
 				983CA8941E9BD686003E37E6 /* ClutterObject.h */,
 				F67D08E31EA0177E00380582 /* GraveStone.cpp */,
 				F67D08E41EA0177E00380582 /* GraveStone.h */,
-				F67D08E71EA01D2C00380582 /* Soul.cpp */,
-				F67D08E81EA01D2C00380582 /* Soul.h */,
+				F620158E1EA4A8D600350031 /* Soul.cpp */,
+				F620158F1EA4A8D600350031 /* Soul.h */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -719,13 +719,13 @@
 				F6235F331C6F38FB00D9DDC6 /* Player.cpp in Sources */,
 				98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				F62015901EA4A8D600350031 /* Soul.cpp in Sources */,
 				F6502F5E1C81CE3300920211 /* Pickup.cpp in Sources */,
 				9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				9815C94C1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9825D8871C80889100FD4133 /* Coin.cpp in Sources */,
-				F67D08E91EA01D2C00380582 /* Soul.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				98DA83101C7C8458006700AD /* Food.cpp in Sources */,
@@ -745,7 +745,6 @@
 				98220EBA1E9CE28600171ECF /* Actor.cpp in Sources */,
 				987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				F67D08EA1EA01D2C00380582 /* Soul.cpp in Sources */,
 				9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				F6502F651C81E28100920211 /* Spike.cpp in Sources */,
 				F6200EAD1C6F1F1B00102152 /* MapHandler.cpp in Sources */,
@@ -754,6 +753,7 @@
 				983CA89C1E9BEFE9003E37E6 /* Background.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				9815C9531C7B0B600018656C /* World.cpp in Sources */,
+				F62015911EA4A8D600350031 /* Soul.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,
 				98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */,

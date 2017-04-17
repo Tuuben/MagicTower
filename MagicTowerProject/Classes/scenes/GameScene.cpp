@@ -2,7 +2,7 @@
 #include "../misc/Background.h"
 #include "../candypunk/utility/Utils.h"
 //Debug
-#include "Soul.h"
+#include "../objects/Soul.h"
 
 GameScene* GameScene::_instance = nullptr;
 
@@ -63,11 +63,6 @@ bool GameScene::init()
     playerObj->setPosition(Vec2( visibleSize.width / 2, (visibleSize.height / 2) * 0.1f ));
     addObject(playerObj);
     
-    //REMOVE
-    auto s = Soul::create();
-    s->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-    addObject(s);
-    
     mapH = MapHandler::create();
     float mapOffsetX = visibleSize.width - mapH->getMapWidth();
     mapH->setPositionX( mapOffsetX / 2 );
@@ -83,6 +78,12 @@ bool GameScene::init()
     grimGraveStoneSpr->setPosition(Vec2( visibleSize.width / 2, 42  ));
     grimGraveStoneSpr->setGlobalZOrder(-80);
     addObject(grimGraveStoneSpr);
+    
+    //REMOVE
+    auto soul = Soul::create();
+    soul->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+    addObject(soul);
+    playerObj->addSoul(soul);
     
    // createBackground();
     
