@@ -10,6 +10,7 @@
 #include "../Globals.h"
 #include "SimpleParticle.h"
 #include "GameScene.h"
+#include "Coin.h"
 
 bool ClutterObject::init(){
 
@@ -69,6 +70,7 @@ bool ClutterObject::onContactBegin(PhysicsContact &c){
     if( (sA->getBody()->getNode() == this && sB->getCollisionBitmask() == PLAYER_BITMASK) ||
         (sB->getBody()->getNode() == this && sA->getCollisionBitmask() == PLAYER_BITMASK) ) {
             breakObject();
+            dropCoins();
        }
     
     return true;
@@ -113,6 +115,22 @@ void ClutterObject::breakObject(){
         part->setIgnoreGravity(true);
         part->setGlobalZOrder(50);
         this->getParent()->addChild(part);
+        
+    }
+    
+}
+
+void ClutterObject::dropCoins(){
+
+    for(int i = 0; i < MAX_COIN_SPAWNS; i++){
+        
+        if((CCRANDOM_0_1() * 100) < EACH_SPAWN_CHANCE){
+        
+            auto c = Coin::create();
+            c->setPosition(getPosition());
+            getParent()->addChild(c);
+            
+        }
         
     }
     

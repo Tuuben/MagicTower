@@ -75,16 +75,12 @@ void Player::removeHealth(){
     _sprite->runAction(Repeat::create(seq, 15));
     
     freeze();
-    getPhysicsBody()->setEnabled(false);
-    
-    auto soul = _soulList.at(0);
-    this->setPosition(soul->getPosition());
     
     auto cBack = CallFunc::create([this](){
         this->unfreeze();
-        getPhysicsBody()->setEnabled(true);
     });
-    runAction(Sequence::create(DelayTime::create(0.5f), cBack, NULL));
+    
+    runAction(Sequence::create(DelayTime::create(0.3f), cBack, NULL));
     
 }
 

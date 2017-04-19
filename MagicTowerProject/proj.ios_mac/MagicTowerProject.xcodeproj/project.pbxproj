@@ -72,6 +72,8 @@
 		983CA89C1E9BEFE9003E37E6 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 983CA8991E9BEFE9003E37E6 /* Background.cpp */; };
 		987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
 		987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */; };
+		987F4E721EA73D7900F1E305 /* ReaperGraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 987F4E701EA73D7900F1E305 /* ReaperGraveStone.cpp */; };
+		987F4E731EA73D7900F1E305 /* ReaperGraveStone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 987F4E701EA73D7900F1E305 /* ReaperGraveStone.cpp */; };
 		98840D8B1E96E013005E1132 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 98840D8A1E96E013005E1132 /* shaders */; };
 		98840D8C1E96E013005E1132 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 98840D8A1E96E013005E1132 /* shaders */; };
 		98916F901C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */; };
@@ -210,6 +212,8 @@
 		983CA89A1E9BEFE9003E37E6 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
 		9871147F1C748DAE0062FCA9 /* ClutterTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClutterTile.cpp; sourceTree = "<group>"; };
 		987114801C748DAE0062FCA9 /* ClutterTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutterTile.h; sourceTree = "<group>"; };
+		987F4E701EA73D7900F1E305 /* ReaperGraveStone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReaperGraveStone.cpp; sourceTree = "<group>"; };
+		987F4E711EA73D7900F1E305 /* ReaperGraveStone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaperGraveStone.h; sourceTree = "<group>"; };
 		98840D7E1E96BC1A005E1132 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		98840D8A1E96E013005E1132 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
 		98916F8E1C7E0A2500D3D0EB /* FlashLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlashLayer.cpp; sourceTree = "<group>"; };
@@ -483,6 +487,15 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		987F4E6F1EA73D7000F1E305 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				987F4E701EA73D7900F1E305 /* ReaperGraveStone.cpp */,
+				987F4E711EA73D7900F1E305 /* ReaperGraveStone.h */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
 		98840D7D1E96BC1A005E1132 /* utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +525,7 @@
 		F6200EA81C6F1EFD00102152 /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				987F4E6F1EA73D7000F1E305 /* misc */,
 				98AFABF71E9A36D500894AF2 /* enemys */,
 				F6502F611C81E27800920211 /* traps */,
 				F6235F311C6F38FB00D9DDC6 /* Player.cpp */,
@@ -727,6 +741,7 @@
 				98AFABFA1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9825D8871C80889100FD4133 /* Coin.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				987F4E721EA73D7900F1E305 /* ReaperGraveStone.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				98DA83101C7C8458006700AD /* Food.cpp in Sources */,
 				987114811C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
@@ -755,6 +770,7 @@
 				9815C9531C7B0B600018656C /* World.cpp in Sources */,
 				F62015911EA4A8D600350031 /* Soul.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,
+				987F4E731EA73D7900F1E305 /* ReaperGraveStone.cpp in Sources */,
 				98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				9825D8881C80889100FD4133 /* Coin.cpp in Sources */,

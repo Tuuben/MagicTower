@@ -72,20 +72,23 @@ bool GameScene::init()
     flashLayer = FlashLayer::create(FOOD_COLOR);
     flashLayer->setGlobalZOrder(100);
     this->addChild(flashLayer);
-    
-    // TEMP
-    auto grimGraveStoneSpr = Sprite::createWithSpriteFrameName(GRIM_REAPER_GRAVESTONE_01);
-    grimGraveStoneSpr->setPosition(Vec2( visibleSize.width / 2, 42  ));
-    grimGraveStoneSpr->setGlobalZOrder(-80);
-    addObject(grimGraveStoneSpr);
+
     
     //REMOVE
     auto soul = Soul::create();
     soul->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
-    addObject(soul);
-    playerObj->addSoul(soul);
+//    addObject(soul);
+//    playerObj->addSoul(soul);
     
    // createBackground();
+    
+    
+    auto text = TextFieldTTF::createWithTTF("Tower of the dead", "fonts/alagard.ttf", 18);
+    text->getFontAtlas()->setAliasTexParameters();
+    text->setPosition(Vec2(visibleSize.width / 2, visibleSize.height / 2));
+//    addChild(text);
+    
+    createDithering();
     
     this->scheduleUpdate();
     
@@ -196,4 +199,25 @@ void GameScene::moveCamera(float dt){
     
 }
 
+void GameScene::createDithering(){
+
+    float baseX = 0;//-visibleSize.width / 2;
+    for(int i = 0; i < 20; i++){
+        
+        Vec2 sPos = Vec2(baseX + (i * 16), visibleSize.height - 8);
+        auto sTop = Sprite::createWithSpriteFrameName(DITHERING_TILE);
+        sTop->setPosition(sPos);
+        sTop->setGlobalZOrder(150);
+        addChild(sTop);
+        
+        sPos.y = 8.0f;
+        auto sBottom = Sprite::createWithSpriteFrameName(DITHERING_TILE);
+        sBottom->setScaleY(-1.0f);
+        sBottom->setPosition(sPos);
+        sBottom->setGlobalZOrder(150);
+        addChild(sBottom);
+
+    }
+    
+}
 

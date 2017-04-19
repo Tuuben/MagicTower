@@ -15,6 +15,7 @@
 #include "../objects/traps/ExplosiveCrate.h"
 #include "../objects/ClutterObject.h"
 #include "../objects/GraveStone.h"
+#include "../objects/misc/ReaperGraveStone.h"
 
 using namespace cocos2d;
 
@@ -88,10 +89,18 @@ float MapHandler::getMapHeight()
 
 void MapHandler::createLevelBaseFloor()
 {
+    
+    // Create tiles
     for(int i = 1; i < LEVEL_BLOCK_WIDTH; i++)
     {
         createSolidTile(i, BASE_FLOOR_HEIGHT, 0);
     }
+    
+    // Create statue
+    auto repearGraveStone = ReaperGraveStone::create();
+    repearGraveStone->setPosition(Vec2( (LEVEL_BLOCK_WIDTH / 2) * TILE_WIDTH, 42.0f ));
+    addChild(repearGraveStone);
+    
 }
 
 void MapHandler::createLevelBlockOutline()
@@ -99,6 +108,7 @@ void MapHandler::createLevelBlockOutline()
     
     for(int i = _baseYIndex; i < _baseYIndex + LEVEL_BLOCK_HEIGHT; i++)
     {
+        
         createSolidTile(-1, i, 15);
         createSolidTile(-2, i, 15);
         createOuterTile( 0, i, -1);
@@ -273,7 +283,7 @@ void MapHandler::createLevelContentObjects()
                     
                     // Create grave stones
                     if( (100 * CCRANDOM_0_1()) < GRAVE_SPAWN_CHANCE){
-                        createGraveStone(x, y + _baseYIndex);
+//                        createGraveStone(x, y + _baseYIndex);
                     }
                 }
                 

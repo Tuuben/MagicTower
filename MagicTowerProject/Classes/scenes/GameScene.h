@@ -27,7 +27,7 @@ public:
     void flashColor( cocos2d::Color3B color );
     void createBackground();
     void setGameActive(bool active){ gameActive = active; };
-    
+    void createDithering();
     Player* getPlayer();
     
 private:

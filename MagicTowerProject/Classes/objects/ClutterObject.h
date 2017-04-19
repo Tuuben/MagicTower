@@ -14,7 +14,8 @@
 USING_NS_CC;
 
 class ClutterObject : public Node {
-    
+#define MAX_COIN_SPAWNS 6
+#define EACH_SPAWN_CHANCE 60.0f
 public:
     CREATE_FUNC(ClutterObject);
     bool init();
@@ -26,6 +27,7 @@ private:
     void setupCollisionEvents();
     bool onContactBegin(PhysicsContact& c);
     void breakObject();
+    void dropCoins();
     
 };
 
