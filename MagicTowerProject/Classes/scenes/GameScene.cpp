@@ -203,6 +203,9 @@ void GameScene::moveCamera(float dt){
         
         roomsIndex++;
         
+        // Add score
+        addScore(10);
+        
     }
     
 }
@@ -373,34 +376,36 @@ void GameScene::addScore(int amt){
     
     score += amt;
     
+    CCLOG("score: %d", score);
     std::stringstream stream;
+
     // 00000000
-    if(amt < 10){
-        stream << "0000000" << amt;
+    if(score < 10){
+        stream << "0000000" << score;
     }
-    else if(amt >= 10 && amt < 100){
-        stream << "000000" << amt;
+    if(score >= 10 && score < 100){
+        stream << "000000" << score;
     }
-    else if(amt >= 100 && amt < 1000){
-        stream << "00000" << amt;
+    if(score >= 100 && score < 1000){
+        stream << "00000" << score;
     }
-    else if(amt >= 1000 && amt < 10000){
-        stream << "0000" << amt;
+    if(score >= 1000 && score < 10000){
+        stream << "0000" << score;
     }
-    else if(amt >= 10000 && amt < 100000){
-        stream << "0000" << amt;
+    if(score >= 10000 && score < 100000){
+        stream << "0000" << score;
     }
-    else if(amt >= 100000 && amt < 1000000){
-        stream << "000" << amt;
+    if(score >= 100000 && score < 1000000){
+        stream << "000" << score;
     }
-    else if(amt >= 1000000 && amt < 10000000){
-        stream << "00" << amt;
+    if(score >= 1000000 && score < 10000000){
+        stream << "00" << score;
     }
-    else if(amt >= 10000000 && amt < 100000000){
-        stream << "0" << amt;
+    if(score >= 10000000 && score < 100000000){
+        stream << "0" << score;
     }
-    else if(amt >= 100000000){
-        stream << "" << amt;
+    if(score >= 100000000){
+        stream << "" << score;
     }
     
     scoreLabel->setString(stream.str());
