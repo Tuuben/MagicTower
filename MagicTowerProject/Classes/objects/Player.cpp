@@ -310,10 +310,10 @@ bool Player::onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event *event)
         jump();
         
         // If it is the initial jump
-        if(_isWaiting){
-            GameScene::getInstance()->setGameActive(true);
-            _isWaiting = false;
-        }
+//        if(_isWaiting){
+//            GameScene::getInstance()->setGameActive(true);
+//            _isWaiting = false;
+//        }
         
     }
     

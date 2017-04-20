@@ -251,6 +251,13 @@
             <filename>../Clutter/banner_06.png</filename>
             <filename>../Clutter/banner_07.png</filename>
             <filename>../Clutter/banner_08.png</filename>
+            <filename>../particles/stone_clutter_01.png</filename>
+            <filename>../particles/stone_clutter_02.png</filename>
+            <filename>../particles/stone_clutter_03.png</filename>
+            <filename>../particles/stone_clutter_04.png</filename>
+            <filename>../MapObjects/grim_gravestone_02.png</filename>
+            <filename>../MapObjects/tutorial_arrow_right.png</filename>
+            <filename>../MapObjects/tutorial_line.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

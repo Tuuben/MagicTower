@@ -22,16 +22,23 @@ public:
     static GameScene* create();
     
     virtual bool init();
-    
+    void setupEvents();
     void update(float dt);
     void flashColor( cocos2d::Color3B color );
     void createBackground();
-    void setGameActive(bool active){ gameActive = active; };
     void createDithering();
+    void createScoreLabel();
+    void createInitalRoomObjects();
+    void createTutorialSection();
+    void startGameCountdown();
+    void emitStoneParticles();
+    void addScore(int amt);
+    void setGameActive(bool active){ gameActive = active; };
     Player* getPlayer();
     
 private:
-    void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
+    bool onTouchBegan(Touch* touch, Event* event);
     void moveCamera(float dt);
     
 public:
@@ -41,12 +48,18 @@ public:
     cocos2d::Vec2 lastPlayerPos;
     cocos2d::Size visibleSize;
     bool gameActive = false;
+    bool firstTap = false;
 
 private:
     static GameScene* _instance;
     int roomsIndex = 1;
+    int score = 0;
     bool cameraIsMoving = false;
     float cameraYPos = 0.0f;
+    float startGameDelayTime = 3.0f;
+    Label* gameStartCountDownLabel;
+    Label* gameStartLabel;
+    Label* scoreLabel;
     
 };
 

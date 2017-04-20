@@ -19,6 +19,14 @@ bool ReaperGraveStone::init(){
     sprt->setGlobalZOrder(-100);
     addChild(sprt);
     
+    
+    
     return true;
+    
+}
+
+void ReaperGraveStone::breakStone(){
+    
+    sprt->setSpriteFrame(GRIM_REAPER_GRAVESTONE_02);
     
 }

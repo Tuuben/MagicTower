@@ -47,6 +47,11 @@
 #define PARTICLE_CLUTTER_01 "clutter_debri_01.png"
 #define PARTICLE_CLUTTER_02 "clutter_debri_02.png"
 #define PARTICLE_CLUTTER_03 "clutter_debri_03.png"
+#define PARTICLE_STONE_01 "stone_clutter_01.png"
+#define PARTICLE_STONE_02 "stone_clutter_02.png"
+#define PARTICLE_STONE_03 "stone_clutter_03.png"
+#define PARTICLE_STONE_04 "stone_clutter_04.png"
+
 
 /*==== < OBJECT SPRITES > ====*/
 #define FOOD_IDLE_01 "food_01.png"
@@ -78,6 +83,7 @@
 #define SWING_CHAIN_01 "chain_link.png"
 #define SWING_MACE_01 "chain_mace.png"
 #define GRIM_REAPER_GRAVESTONE_01 "grim_gravestone_01.png"
+#define GRIM_REAPER_GRAVESTONE_02 "grim_gravestone_02.png"
 #define EXPLOSIVE_CRATE_01 "explosive_crate.png"
 
 /*==== < MISC SPRITES > ====*/
@@ -94,6 +100,8 @@
 #define BANNER_07 "banner_07.png"
 #define BANNER_08 "banner_08.png"
 #define DITHERING_TILE "dithering.png"
+#define TUTORIAL_LINE "tutorial_line.png"
+#define TUTORIAL_ARROW "tutorial_arrow_right.png"
 
 /*==== < TILEMAP SPRITES > ====*/
 #define SOLID_TILE_SPRITE_00 "solidTile.png"

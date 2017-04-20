@@ -18,6 +18,7 @@ class ReaperGraveStone : public Node {
 public:
     CREATE_FUNC(ReaperGraveStone);
     bool init();
+    void breakStone();
 private:
     Sprite* sprt;
 };
