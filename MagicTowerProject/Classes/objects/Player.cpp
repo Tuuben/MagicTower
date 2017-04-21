@@ -141,7 +141,7 @@ void Player::setStats(){
 float speedLineScale = 0;
 void Player::update(float dt)
 {
-    if(isFrozen())
+    if(isFrozen() || _isDead)
         return;
     
     Actor::update(dt);
@@ -231,6 +231,7 @@ void Player::kill(){
         
     }
     
+    _isDead = true;
 }
 
 void Player::checkSideCollisions()
@@ -351,6 +352,9 @@ void Player::checkSideCollisions()
 
 bool Player::onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event *event)
 {
+    if(_isDead)
+        return false;
+    
     for(auto touch : touches){
         
         float touchXPos = touch->getLocation().x;

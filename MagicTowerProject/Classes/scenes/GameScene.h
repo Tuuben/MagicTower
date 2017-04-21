@@ -59,7 +59,7 @@ private:
     int score = 0;
     bool cameraIsMoving = false;
     float cameraYPos = 0.0f;
-    float startGameDelayTime = 3.0f;
+    float startGameDelayTime = 0.0f;
     Label* gameStartCountDownLabel;
     Label* gameStartLabel;
     Label* scoreLabel;

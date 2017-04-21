@@ -73,6 +73,7 @@ private:
     bool _touchBottom = false;
     bool _touchTop = false;
     bool _isWaiting = true;
+    bool _isDead = false;
     
     cocos2d::DrawNode* _drawNode;
     float _angle = 0;

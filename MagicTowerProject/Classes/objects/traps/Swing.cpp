@@ -22,6 +22,8 @@ bool Swing::init(){
     
     auto pbody = PhysicsBody::createBox(Size( 16,16 ));
     pbody->setDynamic(false);
+    pbody->setContactTestBitmask(true);
+    pbody->setCollisionBitmask(OBSTACLE_BITMASK);
     addComponent(pbody);
     
     direction = (CCRANDOM_0_1() < 0.5) ? -1 : 1;
@@ -45,6 +47,8 @@ void Swing::createChainNodes(int amt){
         p->setDynamic(true);
         p->setGravityEnable(false);
         p->setRotationEnable(false);
+        p->setContactTestBitmask(true);
+        p->setCollisionBitmask(OBSTACLE_BITMASK);
         p->getShape(0)->setSensor(true);
         sprite->addComponent(p);
         addChild(sprite);
@@ -60,6 +64,8 @@ void Swing::createChainNodes(int amt){
     p->setDynamic(true);
     p->setGravityEnable(false);
     p->setRotationEnable(false);
+    p->setContactTestBitmask(true);
+    p->setCollisionBitmask(OBSTACLE_BITMASK);
     p->getShape(0)->setSensor(true);
     sprite->addComponent(p);
     addChild(sprite);
