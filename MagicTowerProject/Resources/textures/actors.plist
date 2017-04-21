@@ -349,6 +349,21 @@
                 <key>textureRotated</key>
                 <false/>
             </dict>
+            <key>skull.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{10,12}</string>
+                <key>spriteSourceSize</key>
+                <string>{10,12}</string>
+                <key>textureRect</key>
+                <string>{{66,196},{10,12}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
         </dict>
         <key>metadata</key>
         <dict>
@@ -359,7 +374,7 @@
             <key>size</key>
             <string>{128,256}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f14fd00f27432aba384bf88cab56d4a1:fa851f814e17f4d8fe1e8ab62380d22b:a8a8d655413f0a48afc1b310ef1c562a$</string>
+            <string>$TexturePacker:SmartUpdate:8f19d71a08495b433163d3360b66f628:b34cf8000d9ee5f64eb2df92ee9cbb43:a8a8d655413f0a48afc1b310ef1c562a$</string>
             <key>textureFileName</key>
             <string>actors.png</string>
         </dict>

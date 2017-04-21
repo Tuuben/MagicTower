@@ -84,6 +84,10 @@
 		98AFABFF1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98AFABFC1E9A91D600894AF2 /* ExplosiveCrate.cpp */; };
 		98DA83101C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
 		98DA83111C7C8458006700AD /* Food.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98DA830E1C7C8458006700AD /* Food.cpp */; };
+		98E09DA41EA9E26500A23639 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98E09DA21EA9E26500A23639 /* HealthBar.cpp */; };
+		98E09DA51EA9E26500A23639 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98E09DA21EA9E26500A23639 /* HealthBar.cpp */; };
+		98E09DA81EA9E55E00A23639 /* PlayerStats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98E09DA61EA9E55E00A23639 /* PlayerStats.cpp */; };
+		98E09DA91EA9E55E00A23639 /* PlayerStats.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98E09DA61EA9E55E00A23639 /* PlayerStats.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -224,6 +228,10 @@
 		98AFABFD1E9A91D600894AF2 /* ExplosiveCrate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosiveCrate.h; sourceTree = "<group>"; };
 		98DA830E1C7C8458006700AD /* Food.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Food.cpp; sourceTree = "<group>"; };
 		98DA830F1C7C8458006700AD /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		98E09D9E1EA9E1F300A23639 /* PlayerStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerStats.h; sourceTree = "<group>"; };
+		98E09DA21EA9E26500A23639 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
+		98E09DA31EA9E26500A23639 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
+		98E09DA61EA9E55E00A23639 /* PlayerStats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerStats.cpp; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -387,6 +395,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				98E09DA11EA9E25B00A23639 /* ui */,
 				983CA8981E9BEFBF003E37E6 /* misc */,
 				9815C9461C7B0B490018656C /* candypunk */,
 				F6200EA91C6F1F1000102152 /* handlers */,
@@ -395,6 +404,8 @@
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				F6200EA41C6F1CF700102152 /* Globals.h */,
+				98E09D9E1EA9E1F300A23639 /* PlayerStats.h */,
+				98E09DA61EA9E55E00A23639 /* PlayerStats.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -511,6 +522,15 @@
 				98AFABF91E9A36E000894AF2 /* Bat.h */,
 			);
 			path = enemys;
+			sourceTree = "<group>";
+		};
+		98E09DA11EA9E25B00A23639 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				98E09DA21EA9E26500A23639 /* HealthBar.cpp */,
+				98E09DA31EA9E26500A23639 /* HealthBar.h */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		F6200E8E1C6F19A700102152 /* scenes */ = {
@@ -725,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9825D8801C80495700FD4133 /* AudioManager.cpp in Sources */,
+				98E09DA41EA9E26500A23639 /* HealthBar.cpp in Sources */,
 				98AFABFE1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
 				F6200E911C6F19A700102152 /* GameScene.cpp in Sources */,
 				F675F6861C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
@@ -735,6 +756,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				F62015901EA4A8D600350031 /* Soul.cpp in Sources */,
 				F6502F5E1C81CE3300920211 /* Pickup.cpp in Sources */,
+				98E09DA81EA9E55E00A23639 /* PlayerStats.cpp in Sources */,
 				9823DE1B1E98CDA9003ACFE4 /* Swing.cpp in Sources */,
 				9815C94C1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -771,10 +793,12 @@
 				F62015911EA4A8D600350031 /* Soul.cpp in Sources */,
 				9825D8811C80495700FD4133 /* AudioManager.cpp in Sources */,
 				987F4E731EA73D7900F1E305 /* ReaperGraveStone.cpp in Sources */,
+				98E09DA91EA9E55E00A23639 /* PlayerStats.cpp in Sources */,
 				98AFABFB1E9A36E000894AF2 /* Bat.cpp in Sources */,
 				9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */,
 				9825D8881C80889100FD4133 /* Coin.cpp in Sources */,
 				F6235F341C6F38FB00D9DDC6 /* Player.cpp in Sources */,
+				98E09DA51EA9E26500A23639 /* HealthBar.cpp in Sources */,
 				98916F911C7E0A2500D3D0EB /* FlashLayer.cpp in Sources */,
 				F675F6871C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
 				98DA83111C7C8458006700AD /* Food.cpp in Sources */,

@@ -75,11 +75,15 @@ bool GameScene::init()
     flashLayer->setGlobalZOrder(100);
     this->addChild(flashLayer);
     
+    /// TEMP _ SET PLAYER STATS
+
+    ///
     
     setupEvents();
     createDithering();
     createInitalRoomObjects();
     createScoreLabel();
+    createHealthBar();
     
     this->scheduleUpdate();
     
@@ -136,6 +140,13 @@ Player* GameScene::getPlayer(){
     }
         
     return playerObj;
+    
+}
+
+HealthBar* GameScene::getHealthBar(){
+
+    return healthBar;
+    
 }
 
 void GameScene::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event *event)
@@ -204,7 +215,7 @@ void GameScene::moveCamera(float dt){
         roomsIndex++;
         
         // Add score
-        addScore(10);
+        addScore(20);
         
     }
     
@@ -261,6 +272,14 @@ void GameScene::createScoreLabel(){
     bg->setPosition(Vec2(0.0f, visibleSize.height * 0.95f));
     bg->setGlobalZOrder(135);
     addChild(bg);
+    
+}
+
+void GameScene::createHealthBar(){
+    
+    healthBar = HealthBar::create();
+    healthBar->setPosition(Vec2(visibleSize.width / 2, visibleSize.height * 0.93f ));
+    addChild(healthBar);
     
 }
 
@@ -341,8 +360,36 @@ void GameScene::startGameCountdown(){
         mapH->getReaperStone()->breakStone();
         this->setScreenShake(0.8f, 16.0f, 16.0f);
         
-        for(int i = 0; i < 12; i++)
-            this->emitStoneParticles();
+//        for(int i = 0; i < 12; i++)
+//            this->emitStoneParticles();
+        
+        for(int i = 0; i < 12; i++){
+            
+            float angle = MATH_PIOVER2 * 4.0f * (i / 12.0f);
+            float vx = cos(angle) * 30.0f;
+            float vy = sin(angle) * 30.0f;
+            float lifetime = 1.0f;
+            auto part = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifetime, 3.0f, 0.0f);
+            part->setGlobalZOrder(-100);
+            part->setPosition( Vec2( (visibleSize.width * 0.495f) + (cos(angle) * 5.0f), (visibleSize.height * 0.05f) + (sin(angle) * 5.0f) ));
+            part->setIgnoreGravity(true);
+            this->addObject(part);
+            
+        }
+        
+        for(int i = 0; i < 12; i++){
+            
+            float angle = MATH_PIOVER2 * 4.0f * (i / 12.0f);
+            float vx = cos(angle) * 240.0f;
+            float vy = sin(angle) * 240.0f;
+            float lifetime = 1.0f;
+            auto part = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifetime, 2.0f, 0.0f);
+            part->setGlobalZOrder(-100);
+            part->setPosition( Vec2( (visibleSize.width * 0.495f) + (cos(angle) * 5.0f), (visibleSize.height * 0.05f) + (sin(angle) * 5.0f) ));
+            part->setIgnoreGravity(true);
+            this->addObject(part);
+            
+        }
         
         this->createTutorialSection();
         

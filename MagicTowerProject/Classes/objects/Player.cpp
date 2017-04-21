@@ -10,6 +10,7 @@
 #include "../scenes/GameScene.h"
 #include "../handlers/AudioManager.h"
 #include "../candypunk/utility/Utils.h"
+#include "../PlayerStats.h"
 #include "Soul.h"
 
 Player* Player::create( cocos2d::Layer* onLayer )
@@ -55,6 +56,7 @@ bool Player::init( cocos2d::Layer* onLayer )
     this->setPhysicsBody(pBody);
     
     setupEvents();
+    setStats();
     
     this->scheduleUpdate();
     
@@ -66,6 +68,8 @@ void Player::removeHealth(){
     _lives--;
     _immortalDuration = IMMORTAL_DURATION;
     _immortal = true;
+    
+    GameScene::getInstance()->getHealthBar()->removeHeart();
     
     // Effect
     auto fadeTo = FadeTo::create(0.0f, 0);
@@ -81,6 +85,10 @@ void Player::removeHealth(){
     });
     
     runAction(Sequence::create(DelayTime::create(0.3f), cBack, NULL));
+    
+    if(_lives <= 0){
+        kill();
+    }
     
 }
 
@@ -122,6 +130,12 @@ void Player::setupEvents()
     
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchEventListener, this);
     Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(collisionEventListener, this);
+}
+
+void Player::setStats(){
+
+    _lives = PlayerStats::getInstance()->getLives();
+    
 }
 
 float speedLineScale = 0;
@@ -173,6 +187,48 @@ void Player::immortalCountdown(float dt){
     if(_immortalDuration <= 0.0f){
         _immortal = false;
         _immortalDuration = 0.0f;
+    }
+    
+}
+
+void Player::kill(){
+
+    GameScene::getInstance()->setScreenShake(0.2f, 30.0f, 30.0f);
+    
+    this->setVisible(false);
+    auto skull = Sprite::createWithSpriteFrameName(SKULL_01);
+    auto pBody = PhysicsBody::createCircle(6);
+    pBody->setVelocity(Vec2( 400.0f * CCRANDOM_0_1() - 200.0f, 400.0f * CCRANDOM_0_1() - 200.0f ));
+    skull->addComponent(pBody);
+    skull->setPosition(getPosition());
+    getParent()->addChild(skull);
+    
+    for(int i = 0; i < 12; i++){
+        
+        float angle = MATH_PIOVER2 * 4.0f * (i / 12.0f);
+        float vx = cos(angle) * 30.0f;
+        float vy = sin(angle) * 30.0f;
+        float lifetime = 1.0f;
+        auto part = SimpleParticle::create(PARTICLE_CIRCLE_01, vx, vy, lifetime, 2.0f, 0.0f);
+        part->setGlobalZOrder(100);
+        part->setPosition( Vec2( getPositionX() + (cos(angle) * 5.0f), getPositionY() + (sin(angle) * 5.0f) ));
+        part->setIgnoreGravity(true);
+        getParent()->addChild(part);
+        
+    }
+    
+    for(int i = 0; i < 10; i++){
+        
+        float vx = 300.0f * CCRANDOM_0_1() - 150.0f;
+        float vy = 300.0f * CCRANDOM_0_1() - 150.0f;
+        float lifetime = 1.0f * CCRANDOM_0_1() + 0.6f;
+        float startSize = 1.0f * CCRANDOM_0_1() + 0.6f;
+        auto part = SimpleParticle::create(PARTICLE_DUST_01, vx, vy, lifetime, startSize, 0.0f);
+        part->setGlobalZOrder(100);
+        part->setPosition( Vec2( getPositionX(), getPositionY() ));
+        part->setIgnoreGravity(true);
+        getParent()->addChild(part);
+        
     }
     
 }

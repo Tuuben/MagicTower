@@ -7,6 +7,7 @@
 #include "../objects/Player.h"
 #include "../candypunk/World.h"
 #include "../objects/FlashLayer.h"
+#include "../ui/HealthBar.h"
 
 USING_NS_CC;
 
@@ -28,6 +29,7 @@ public:
     void createBackground();
     void createDithering();
     void createScoreLabel();
+    void createHealthBar();
     void createInitalRoomObjects();
     void createTutorialSection();
     void startGameCountdown();
@@ -35,6 +37,7 @@ public:
     void addScore(int amt);
     void setGameActive(bool active){ gameActive = active; };
     Player* getPlayer();
+    HealthBar* getHealthBar();
     
 private:
     void onKeyPressed(EventKeyboard::KeyCode keyCode, Event* event);
@@ -60,6 +63,7 @@ private:
     Label* gameStartCountDownLabel;
     Label* gameStartLabel;
     Label* scoreLabel;
+    HealthBar* healthBar;
     
 };
 

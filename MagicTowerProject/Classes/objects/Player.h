@@ -40,9 +40,11 @@ public:
     
 private:
     void setupEvents();
+    void setStats();
     void update(float dt) override;
     void jump();
     void immortalCountdown(float dt);
+    void kill();
     void checkSideCollisions();
     bool onTouchesBegan(std::vector<Touch*> touches, cocos2d::Event* event);
     bool onContactBegin(cocos2d::PhysicsContact& contact);

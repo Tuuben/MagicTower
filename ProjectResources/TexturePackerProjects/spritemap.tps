@@ -258,6 +258,7 @@
             <filename>../MapObjects/grim_gravestone_02.png</filename>
             <filename>../MapObjects/tutorial_arrow_right.png</filename>
             <filename>../MapObjects/tutorial_line.png</filename>
+            <filename>../MapObjects/heart.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

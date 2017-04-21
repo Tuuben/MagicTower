@@ -215,6 +215,7 @@
             <filename>../Actors/bat_03.png</filename>
             <filename>../Actors/bat_04.png</filename>
             <filename>../Actors/bat_02.png</filename>
+            <filename>../Actors/skull.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

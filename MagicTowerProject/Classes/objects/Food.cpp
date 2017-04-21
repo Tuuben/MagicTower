@@ -8,6 +8,7 @@
 
 #include "Food.h"
 #include "../handlers/AudioManager.h"
+#include "../scenes/GameScene.h"
 
 using namespace cocos2d;
 
@@ -52,6 +53,7 @@ void Food::onPickUpObject()
     this->getPhysicsBody()->setEnabled(false);
     
     AudioManager::getInstance()->playSoundEffect( SFX_PICK_UP_03, 0.6f, 1.0f);
+    GameScene::getInstance()->addScore(5);
     
     _canMove = false;
     
