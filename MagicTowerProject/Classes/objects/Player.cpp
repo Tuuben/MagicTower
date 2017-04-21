@@ -198,7 +198,7 @@ void Player::kill(){
     this->setVisible(false);
     auto skull = Sprite::createWithSpriteFrameName(SKULL_01);
     auto pBody = PhysicsBody::createCircle(6);
-    pBody->setVelocity(Vec2( 400.0f * CCRANDOM_0_1() - 200.0f, 400.0f * CCRANDOM_0_1() - 200.0f ));
+    pBody->setVelocity(Vec2( 400.0f * CCRANDOM_0_1() - 200.0f, 200.0f * CCRANDOM_0_1() + 150.0f ));
     skull->addComponent(pBody);
     skull->setPosition(getPosition());
     getParent()->addChild(skull);

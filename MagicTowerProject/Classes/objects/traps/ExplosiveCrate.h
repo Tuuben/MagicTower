@@ -23,6 +23,7 @@ public:
 private:
     Sprite* sprt;
     Player* player = nullptr;
+    
     float countDown = 3.0f;
     bool isTriggered = false;
     bool isDestroyed = false;

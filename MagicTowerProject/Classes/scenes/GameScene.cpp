@@ -16,7 +16,7 @@ Scene* GameScene::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::createWithPhysics();
-    scene->getPhysicsWorld()->setDebugDrawMask(1);
+    scene->getPhysicsWorld()->setDebugDrawMask(0);
     scene->getPhysicsWorld()->setUpdateRate(12);
     scene->getPhysicsWorld()->setSubsteps(6);
     scene->getPhysicsWorld()->setSpeed(2);

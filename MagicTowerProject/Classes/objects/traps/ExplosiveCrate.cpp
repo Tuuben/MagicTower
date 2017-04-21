@@ -109,6 +109,19 @@ void ExplosiveCrate::explode(){
         
     }
     
+    auto explosionBox = Node::create();
+    explosionBox->setPosition(getPosition());
+    explosionBox->addComponent(PhysicsBody::createCircle(46.0f));
+    explosionBox->getPhysicsBody()->setContactTestBitmask(true);
+    explosionBox->getPhysicsBody()->setGravityEnable(false);
+    explosionBox->getPhysicsBody()->setDynamic(false);
+    explosionBox->getPhysicsBody()->setCollisionBitmask(OBSTACLE_BITMASK);
+    getParent()->addChild(explosionBox);
+    
+    auto callFunc = CallFunc::create([explosionBox](){ explosionBox->removeFromParent(); });
+    auto wait = DelayTime::create(0.1f);
+    explosionBox->runAction(Sequence::create(wait, callFunc, NULL));
+    
 }
 
 void ExplosiveCrate::setFlashEffect(){
@@ -131,3 +144,5 @@ float ExplosiveCrate::getDistanceToPlayer(){
     return Utils::distance(curPos, playerPos);
     
 }
+
+
