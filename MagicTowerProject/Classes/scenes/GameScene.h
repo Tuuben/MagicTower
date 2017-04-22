@@ -36,6 +36,7 @@ public:
     void emitStoneParticles();
     void addScore(int amt);
     void setGameActive(bool active){ gameActive = active; };
+    float getMinPlayerYPos();
     Player* getPlayer();
     HealthBar* getHealthBar();
     
@@ -59,6 +60,7 @@ private:
     int score = 0;
     bool cameraIsMoving = false;
     float cameraYPos = 0.0f;
+    float minPlayerYPos = -100.0f;
     float startGameDelayTime = 0.0f;
     Label* gameStartCountDownLabel;
     Label* gameStartLabel;

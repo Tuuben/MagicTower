@@ -107,7 +107,6 @@ void GameScene::update(float dt)
 {
     
     World::update(dt);
-
     moveCamera(dt);
     
 }
@@ -131,6 +130,10 @@ void GameScene::createBackground(){
     bg1->setOther(bg2);
     bg2->setOther(bg1);
 
+}
+
+float GameScene::getMinPlayerYPos(){
+    return minPlayerYPos;
 }
 
 Player* GameScene::getPlayer(){
@@ -205,6 +208,8 @@ void GameScene::moveCamera(float dt){
         getObjectLayer()->runAction( Sequence::create(EaseSineInOut::create(move), wait, onComplete, NULL));
         
         cameraYPos = visibleSize.height * roomsIndex;
+        minPlayerYPos = (visibleSize.height * (roomsIndex - 1)) + (visibleSize.height / 2);
+        CCLOG(" min ppos %f", minPlayerYPos);
         
         // Freeze moving objects
         playerObj->freeze();

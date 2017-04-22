@@ -65,6 +65,9 @@ bool Player::init( cocos2d::Layer* onLayer )
 
 void Player::removeHealth(){
 
+    if(_isDead)
+        return;
+    
     _lives--;
     _immortalDuration = IMMORTAL_DURATION;
     _immortal = true;
@@ -149,6 +152,11 @@ void Player::update(float dt)
     float vy = this->getPhysicsBody()->getVelocity().y;
     if(vy <= -0.1f) {
         _touchBottom = false;
+    }
+    
+    if(GameScene::getInstance()->getMinPlayerYPos() >= getPositionY() && !_isDead){
+        kill();
+        GameScene::getInstance()->getHealthBar()->setVisible(false);
     }
     
     checkSideCollisions();
