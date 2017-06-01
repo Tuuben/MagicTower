@@ -52,6 +52,8 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		98024D3A1EC4834900C14726 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98024D381EC4834900C14726 /* MainMenuScene.cpp */; };
+		98024D3B1EC4834900C14726 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98024D381EC4834900C14726 /* MainMenuScene.cpp */; };
 		9815C94C1C7B0B490018656C /* AnimationComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9481C7B0B490018656C /* AnimationComponent.cpp */; };
 		9815C94D1C7B0B490018656C /* AnimationComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9481C7B0B490018656C /* AnimationComponent.cpp */; };
 		9815C9521C7B0B600018656C /* World.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9815C9501C7B0B600018656C /* World.cpp */; };
@@ -197,6 +199,8 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		98024D381EC4834900C14726 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
+		98024D391EC4834900C14726 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		9815C9481C7B0B490018656C /* AnimationComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationComponent.cpp; sourceTree = "<group>"; };
 		9815C9491C7B0B490018656C /* AnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationComponent.h; sourceTree = "<group>"; };
 		9815C9501C7B0B600018656C /* World.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = World.cpp; sourceTree = "<group>"; };
@@ -538,6 +542,8 @@
 			children = (
 				F6200E8F1C6F19A700102152 /* GameScene.cpp */,
 				F6200E901C6F19A700102152 /* GameScene.h */,
+				98024D381EC4834900C14726 /* MainMenuScene.cpp */,
+				98024D391EC4834900C14726 /* MainMenuScene.h */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -746,6 +752,7 @@
 			files = (
 				9825D8801C80495700FD4133 /* AudioManager.cpp in Sources */,
 				98E09DA41EA9E26500A23639 /* HealthBar.cpp in Sources */,
+				98024D3A1EC4834900C14726 /* MainMenuScene.cpp in Sources */,
 				98AFABFE1E9A91D600894AF2 /* ExplosiveCrate.cpp in Sources */,
 				F6200E911C6F19A700102152 /* GameScene.cpp in Sources */,
 				F675F6861C710C8900CC04E3 /* SimpleParticle.cpp in Sources */,
@@ -780,6 +787,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98220EBA1E9CE28600171ECF /* Actor.cpp in Sources */,
+				98024D3B1EC4834900C14726 /* MainMenuScene.cpp in Sources */,
 				987114821C748DAE0062FCA9 /* ClutterTile.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				9823DE1C1E98CDA9003ACFE4 /* Swing.cpp in Sources */,

@@ -104,6 +104,10 @@
 #define TUTORIAL_ARROW "tutorial_arrow_right.png"
 #define HEART_01 "heart.png"
 
+/*==== < UI SPRITES > ====*/
+#define BUTTON_LARGE  "button_01.png"
+#define BUTTON_LARGE_PRESSED "button_02.png"
+
 /*==== < TILEMAP SPRITES > ====*/
 #define SOLID_TILE_SPRITE_00 "solidTile.png"
 #define SOLID_TILE_SPRITE_01 "solidTile_06.png"

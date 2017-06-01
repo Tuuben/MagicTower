@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "scenes/GameScene.h"
+#include "scenes/MainMenuScene.h"
 #include "Globals.h"
 #include <SimpleAudioEngine.h>
 #include "handlers/AudioManager.h"
@@ -85,7 +86,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::FIXED_HEIGHT);
 
     // create a scene. it's an autorelease object
-    auto scene = GameScene::createScene();
+    auto scene = MainMenuScene::createScene();
 
     // run
     director->runWithScene(scene);

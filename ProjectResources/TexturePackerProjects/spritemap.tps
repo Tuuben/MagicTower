@@ -259,6 +259,8 @@
             <filename>../MapObjects/tutorial_arrow_right.png</filename>
             <filename>../MapObjects/tutorial_line.png</filename>
             <filename>../MapObjects/heart.png</filename>
+            <filename>../ui/button_01.png</filename>
+            <filename>../ui/button_02.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
